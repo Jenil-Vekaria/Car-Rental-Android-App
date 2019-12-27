@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="src" path="app/build/generated/not_namespaced_r_class_sources/debug/processDebugResources/r"/>
+	<classpathentry kind="src" path="app/build/generated/not_namespaced_r_class_sources/debug/r"/>
+	<classpathentry kind="src" path="app/build/generated/source/buildConfig/androidTest/debug"/>
+	<classpathentry kind="src" path="app/build/generated/source/buildConfig/debug"/>
+	<classpathentry kind="src" path="app/src/androidTest/java"/>
+	<classpathentry kind="src" path="app/src/main/java"/>
+	<classpathentry kind="src" path="app/src/test/java"/>
+	<classpathentry kind="lib" path="app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"/>
+	<classpathentry kind="lib" path="app/build/intermediates/instant_run_app_info_output_file/debug/generateDebugInstantRunAppInfo/instant-run-bootstrap.jar"/>
+	<classpathentry kind="lib" path="app/build/intermediates/merged_java_res/debug/out.jar"/>
+	<classpathentry kind="lib" path="app/build/intermediates/reload-dex/debug/classes.jar"/>
+	<classpathentry kind="lib" path="app/build/intermediates/transforms/mergeJavaRes/debug/0.jar"/>
+	<classpathentry kind="lib" path="app/libs/ojdbc8.jar"/>
+	<classpathentry kind="lib" path="gradle/wrapper/gradle-wrapper.jar"/>
+	<classpathentry kind="lib" path="ojdbc8/ojdbc8.jar"/>
+	<classpathentry kind="output" path="app/build/intermediates/incremental-verifier/debug"/>
+</classpath>

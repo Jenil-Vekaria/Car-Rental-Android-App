@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
+    tools:context=".ActivityPages.AddVehicleCategoryActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:id="@+id/viewImage"
+                    android:layout_width="0dp"
+                    android:layout_height="235dp"
+                    android:layout_marginTop="8dp"
+                    android:background="#FFFFFF"
+                    app:layout_constraintEnd_toEndOf="@+id/imageURL"
+                    app:layout_constraintHorizontal_bias="0.476"
+                    app:layout_constraintStart_toStartOf="@+id/imageURLText"
+                    app:layout_constraintTop_toBottomOf="@+id/imageURL" />
+
+                <EditText
+                    android:id="@+id/category"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="32dp"
+                    android:layout_marginEnd="32dp"
+                    android:backgroundTint="@color/colorSecondary"
+                    android:ems="10"
+                    android:inputType="textPersonName"
+                    android:textColor="@android:color/white"
+                    android:textSize="14sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/categoryText" />
+
+                <TextView
+                    android:id="@+id/welcome_to_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="52dp"
+                    android:text="Add Vehicle Category"
+                    android:textColor="@color/colorSecondary"
+                    android:textSize="30sp"
+                    android:textStyle="bold"
+                    app:fontFamily="@font/nunito"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/categoryText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="4dp"
+                    android:layout_marginTop="32dp"
+                    android:text="Category"
+                    android:textColor="@color/colorSecondary"
+                    app:layout_constraintStart_toStartOf="@+id/category"
+                    app:layout_constraintTop_toBottomOf="@+id/welcome_to_title" />
+
+                <TextView
+                    android:id="@+id/categoryIDText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="Category ID"
+                    android:textColor="@color/colorSecondary"
+                    app:layout_constraintStart_toStartOf="@+id/categoryText"
+                    app:layout_constraintTop_toBottomOf="@+id/category" />
+
+                <Button
+                    android:id="@+id/loadImage"
+                    android:layout_width="85dp"
+                    android:layout_height="34dp"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/round_button"
+                    android:text="Load"
+                    app:layout_constraintStart_toStartOf="@+id/imageURL"
+                    app:layout_constraintTop_toBottomOf="@+id/viewImage" />
+
+                <TextView
+                    android:id="@+id/selectColor"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:text="Select Color"
+                    android:textColor="@color/colorSecondary"
+                    app:layout_constraintBottom_toBottomOf="@+id/colorDisplay"
+                    app:layout_constraintStart_toEndOf="@+id/colorDisplay"
+                    app:layout_constraintTop_toTopOf="@+id/colorDisplay" />
+
+                <EditText
+                    android:id="@+id/imageURL"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/colorSecondary"
+                    android:ems="10"
+                    android:inputType="textPersonName"
+                    android:textColor="@android:color/white"
+                    android:textSize="14sp"
+                    app:layout_constraintEnd_toEndOf="@+id/categoryID"
+                    app:layout_constraintStart_toStartOf="@+id/categoryID"
+                    app:layout_constraintTop_toBottomOf="@+id/imageURLText" />
+
+                <Button
+                    android:id="@+id/add"
+                    android:layout_width="0dp"
+                    android:layout_height="30dp"
+                    android:layout_marginTop="24dp"
+                    android:background="@drawable/round_button"
+                    android:text="Add"
+                    app:layout_constraintEnd_toEndOf="@+id/imageURL"
+                    app:layout_constraintStart_toStartOf="@+id/imageURL"
+                    app:layout_constraintTop_toBottomOf="@+id/colorDisplay" />
+
+                <Button
+                    android:id="@+id/vehicle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    android:layout_marginBottom="16dp"
+                    android:background="@drawable/round_card"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:text="Add Vehicle"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="@+id/reset"
+                    app:layout_constraintStart_toStartOf="@+id/reset"
+                    app:layout_constraintTop_toBottomOf="@+id/reset" />
+
+                <TextView
+                    android:id="@+id/imageURLText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="Image URL"
+                    android:textColor="@color/colorSecondary"
+                    app:layout_constraintStart_toStartOf="@+id/categoryIDText"
+                    app:layout_constraintTop_toBottomOf="@+id/categoryID" />
+
+                <Button
+                    android:id="@+id/reset"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="32dp"
+                    android:background="@drawable/round_button"
+                    android:backgroundTint="#D50000"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:text="Reset"
+                    app:layout_constraintEnd_toEndOf="@+id/add"
+                    app:layout_constraintStart_toStartOf="@+id/add"
+                    app:layout_constraintTop_toBottomOf="@+id/add" />
+
+                <Button
+                    android:id="@+id/colorDisplay"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="16dp"
+                    android:background="@drawable/round_card"
+                    android:backgroundTint="@android:color/white"
+                    app:layout_constraintStart_toStartOf="@+id/loadImage"
+                    app:layout_constraintTop_toBottomOf="@+id/loadImage" />
+
+                <EditText
+                    android:id="@+id/categoryID"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/colorSecondary"
+                    android:ems="10"
+                    android:inputType="number"
+                    android:textColor="@android:color/white"
+                    android:textSize="14sp"
+                    app:layout_constraintEnd_toEndOf="@+id/category"
+                    app:layout_constraintStart_toStartOf="@+id/category"
+                    app:layout_constraintTop_toBottomOf="@+id/categoryIDText" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </LinearLayout>
+    </ScrollView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

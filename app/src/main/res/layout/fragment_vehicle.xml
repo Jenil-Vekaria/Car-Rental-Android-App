@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".FragmentPages.VehicleFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorPrimary">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/nav_bar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="10dp"
+            android:paddingBottom="5dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <EditText
+                android:id="@+id/searchBar"
+                android:layout_width="0dp"
+                android:layout_height="35dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:background="@drawable/round_button"
+                android:backgroundTint="@android:color/white"
+                android:ems="10"
+                android:fontFamily="@font/roboto"
+                android:hint="@android:string/search_go"
+                android:inputType="textPersonName"
+                android:paddingLeft="15dp"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toBottomOf="@+id/search"
+                app:layout_constraintEnd_toStartOf="@+id/search"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/search" />
+
+            <Button
+                android:id="@+id/search"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginEnd="24dp"
+                android:background="@drawable/search_icon"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:paddingLeft="20dp"
+            android:paddingTop="15dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/a_car" />
+
+        <TextView
+            android:id="@+id/choose"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:fontFamily="@font/roboto_bold"
+            android:text="Choose"
+            android:textColor="@color/colorSecondary"
+            android:textSize="30sp"
+            app:layout_constraintStart_toStartOf="@+id/nav_bar"
+            app:layout_constraintTop_toBottomOf="@+id/nav_bar" />
+
+        <TextView
+            android:id="@+id/a_car"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/roboto_thin"
+            android:text="a Car"
+            android:textColor="@android:color/white"
+            android:textSize="24sp"
+            app:layout_constraintStart_toStartOf="@+id/choose"
+            app:layout_constraintTop_toBottomOf="@+id/choose" />
+
+        <Button
+            android:id="@+id/filter"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_marginEnd="4dp"
+            android:background="@drawable/filter_icon"
+            app:layout_constraintBottom_toBottomOf="@+id/filterText"
+            app:layout_constraintEnd_toStartOf="@+id/filterText"
+            app:layout_constraintTop_toTopOf="@+id/filterText" />
+
+        <TextView
+            android:id="@+id/filterText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="32dp"
+            android:fontFamily="@font/roboto"
+            android:text="Filter"
+            android:textColor="@color/colorSecondary"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/nav_bar" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</FrameLayout>

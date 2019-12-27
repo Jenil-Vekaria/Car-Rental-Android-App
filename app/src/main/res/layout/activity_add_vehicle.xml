@@ -1,0 +1,325 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
+    tools:context=".ActivityPages.AddVehicleCategoryActivity">
+
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/welcome_to_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="56dp"
+                    android:text="Add Vehicle "
+                    android:textColor="@color/colorSecondary"
+                    android:textSize="30sp"
+                    android:textStyle="bold"
+                    app:fontFamily="@font/nunito"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+                <TextView
+                    android:id="@+id/categoryText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="4dp"
+                    android:layout_marginTop="16dp"
+                    android:text="Category"
+                    android:textColor="@color/colorSecondary"
+                    app:layout_constraintStart_toStartOf="@+id/category"
+                    app:layout_constraintTop_toBottomOf="@+id/welcome_to_title" />
+
+                <EditText
+                    android:id="@+id/category"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="32dp"
+                    android:layout_marginEnd="32dp"
+                    android:backgroundTint="@color/colorSecondary"
+                    android:ems="10"
+                    android:inputType="textPersonName"
+                    android:textColor="@android:color/white"
+                    android:textSize="14sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/categoryText" />
+
+                <TextView
+                    android:id="@+id/seatsText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="Seats"
+                    android:textColor="@color/colorSecondary"
+                    app:layout_constraintStart_toStartOf="@+id/categoryText"
+                    app:layout_constraintTop_toBottomOf="@+id/category" />
+
+                <EditText
+                    android:id="@+id/seats"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/colorSecondary"
+                    android:ems="10"
+                    android:inputType="number"
+                    android:textColor="@android:color/white"
+                    android:textSize="14sp"
+                    app:layout_constraintEnd_toEndOf="@+id/category"
+                    app:layout_constraintStart_toStartOf="@+id/category"
+                    app:layout_constraintTop_toBottomOf="@+id/seatsText" />
+
+                <TextView
+                    android:id="@+id/priceText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="Price"
+                    android:textColor="@color/colorSecondary"
+                    app:layout_constraintStart_toStartOf="@+id/categoryText"
+                    app:layout_constraintTop_toBottomOf="@+id/seats" />
+
+                <EditText
+                    android:id="@+id/price"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/colorSecondary"
+                    android:ems="10"
+                    android:inputType="numberDecimal"
+                    android:textColor="@android:color/white"
+                    android:textSize="14sp"
+                    app:layout_constraintEnd_toEndOf="@+id/category"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="@+id/category"
+                    app:layout_constraintTop_toBottomOf="@+id/priceText" />
+
+                <TextView
+                    android:id="@+id/mileageText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="Mileage"
+                    android:textColor="@color/colorSecondary"
+                    app:layout_constraintStart_toStartOf="@+id/categoryText"
+                    app:layout_constraintTop_toBottomOf="@+id/price" />
+
+                <EditText
+                    android:id="@+id/mileage"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/colorSecondary"
+                    android:ems="10"
+                    android:inputType="number"
+                    android:textColor="@android:color/white"
+                    android:textSize="14sp"
+                    app:layout_constraintEnd_toEndOf="@+id/price"
+                    app:layout_constraintStart_toStartOf="@+id/price"
+                    app:layout_constraintTop_toBottomOf="@+id/mileageText" />
+
+                <TextView
+                    android:id="@+id/manufacturerText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="Manufacturer"
+                    android:textColor="@color/colorSecondary"
+                    app:layout_constraintStart_toStartOf="@+id/mileageText"
+                    app:layout_constraintTop_toBottomOf="@+id/mileage" />
+
+                <EditText
+                    android:id="@+id/manufacturer"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/colorSecondary"
+                    android:ems="10"
+                    android:inputType="textPersonName"
+                    android:textColor="@android:color/white"
+                    android:textSize="14sp"
+                    app:layout_constraintEnd_toEndOf="@+id/category"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="@+id/category"
+                    app:layout_constraintTop_toBottomOf="@+id/manufacturerText" />
+
+                <TextView
+                    android:id="@+id/modelText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="Model"
+                    android:textColor="@color/colorSecondary"
+                    app:layout_constraintStart_toStartOf="@+id/mileageText"
+                    app:layout_constraintTop_toBottomOf="@+id/manufacturer" />
+
+                <EditText
+                    android:id="@+id/model"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/colorSecondary"
+                    android:ems="10"
+                    android:inputType="textPersonName"
+                    android:textColor="@android:color/white"
+                    android:textSize="14sp"
+                    app:layout_constraintEnd_toEndOf="@+id/category"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="@+id/category"
+                    app:layout_constraintTop_toBottomOf="@+id/modelText" />
+
+                <TextView
+                    android:id="@+id/yearText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="Year"
+                    android:textColor="@color/colorSecondary"
+                    app:layout_constraintStart_toStartOf="@+id/mileageText"
+                    app:layout_constraintTop_toBottomOf="@+id/model" />
+
+                <EditText
+                    android:id="@+id/year"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/colorSecondary"
+                    android:ems="10"
+                    android:inputType="number"
+                    android:textColor="@android:color/white"
+                    android:textSize="14sp"
+                    app:layout_constraintEnd_toEndOf="@+id/category"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="@+id/category"
+                    app:layout_constraintTop_toBottomOf="@+id/yearText" />
+
+                <TextView
+                    android:id="@+id/imageURLText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="Image URL"
+                    android:textColor="@color/colorSecondary"
+                    app:layout_constraintStart_toStartOf="@+id/yearText"
+                    app:layout_constraintTop_toBottomOf="@+id/year" />
+
+                <EditText
+                    android:id="@+id/imageURL"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/colorSecondary"
+                    android:ems="10"
+                    android:inputType="textPersonName"
+                    android:textColor="@android:color/white"
+                    android:textSize="14sp"
+                    app:layout_constraintEnd_toEndOf="@+id/year"
+                    app:layout_constraintStart_toStartOf="@+id/year"
+                    app:layout_constraintTop_toBottomOf="@+id/imageURLText" />
+
+                <Button
+                    android:id="@+id/add"
+                    android:layout_width="0dp"
+                    android:layout_height="30dp"
+                    android:layout_marginTop="24dp"
+                    android:background="@drawable/round_button"
+                    android:text="Add"
+                    app:layout_constraintEnd_toEndOf="@+id/year"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="@+id/year"
+                    app:layout_constraintTop_toBottomOf="@+id/load" />
+
+                <Button
+                    android:id="@+id/reset"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="32dp"
+                    android:background="@drawable/round_button"
+                    android:backgroundTint="#D50000"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:text="Reset"
+                    app:layout_constraintEnd_toEndOf="@+id/add"
+                    app:layout_constraintStart_toStartOf="@+id/add"
+                    app:layout_constraintTop_toBottomOf="@+id/add" />
+
+                <Button
+                    android:id="@+id/vehicleCategory"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:background="@drawable/round_card"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:text="Add Vehicle Category"
+                    app:layout_constraintEnd_toEndOf="@+id/reset"
+                    app:layout_constraintHorizontal_bias="0.471"
+                    app:layout_constraintStart_toStartOf="@+id/reset"
+                    app:layout_constraintTop_toBottomOf="@+id/reset" />
+
+                <CheckBox
+                    android:id="@+id/availability"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:buttonTint="@color/colorSecondary"
+                    android:text="Available"
+                    android:textColor="@color/colorSecondary"
+                    app:layout_constraintStart_toStartOf="@+id/imageURL"
+                    app:layout_constraintTop_toBottomOf="@+id/imageURL" />
+
+                <Button
+                    android:id="@+id/viewResult"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="32dp"
+                    android:layout_marginBottom="32dp"
+                    android:background="@drawable/round_card"
+                    android:backgroundTint="#64DD17"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:text="View Result"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="@+id/vehicleCategory"
+                    app:layout_constraintStart_toStartOf="@+id/vehicleCategory"
+                    app:layout_constraintTop_toBottomOf="@+id/vehicleCategory" />
+
+                <ImageView
+                    android:id="@+id/viewVehicle"
+                    android:layout_width="0dp"
+                    android:layout_height="235dp"
+                    android:layout_marginTop="24dp"
+                    android:background="#FFFFFF"
+                    app:layout_constraintEnd_toEndOf="@+id/imageURL"
+                    app:layout_constraintStart_toStartOf="@+id/imageURL"
+                    app:layout_constraintTop_toBottomOf="@+id/availability" />
+
+                <Button
+                    android:id="@+id/load"
+                    android:layout_width="87dp"
+                    android:layout_height="36dp"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/round_button"
+                    android:text="Load"
+                    app:layout_constraintStart_toStartOf="@+id/viewVehicle"
+                    app:layout_constraintTop_toBottomOf="@+id/viewVehicle" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </LinearLayout>
+    </ScrollView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
