@@ -12,7 +12,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ActivityPages.VehicleInfoActivity"></activity>
+        <activity android:name=".ActivityPages.BookingCarActivity"></activity>
+        <activity android:name=".ActivityPages.VehicleInfoActivity" />
         <activity android:name=".ActivityPages.VehicleDetailsActivity" />
         <activity android:name=".ActivityPages.UserViewActivity" />
         <activity android:name=".ActivityPages.AddVehicleActivity" />

@@ -67,7 +67,7 @@
                     android:text="$50/Day"
                     android:textColor="@color/colorSecondary"
                     android:textSize="24sp"
-                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintEnd_toEndOf="@+id/vehicleSpecCard"
                     app:layout_constraintTop_toBottomOf="@+id/vehicleImage" />
 
                 <androidx.constraintlayout.widget.ConstraintLayout
@@ -172,7 +172,7 @@
                             android:fontFamily="@font/roboto_medium"
                             android:text="Vehicle Specs"
                             android:textColor="@color/colorPrimary"
-                            android:textSize="14sp"
+                            android:textSize="18sp"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent" />
 
@@ -343,6 +343,7 @@
                             android:fontFamily="@font/roboto_medium"
                             android:text="Insurance"
                             android:textColor="@color/colorPrimary"
+                            android:textSize="18sp"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent" />
 
@@ -429,20 +430,20 @@
                     </androidx.constraintlayout.widget.ConstraintLayout>
                 </androidx.cardview.widget.CardView>
 
-                    <Button
-                        android:id="@+id/book_this_car"
-                        android:layout_width="0dp"
-                        android:layout_height="30dp"
-                        android:layout_marginTop="20dp"
-                        android:background="@drawable/round_button"
-                        android:fontFamily="@font/roboto_medium"
-                        android:text="Book This Car"
-                        android:textColor="@color/white"
-                        android:textSize="14sp"
-                        app:layout_constraintEnd_toEndOf="@+id/cardView2"
-                        app:layout_constraintHorizontal_bias="0.0"
-                        app:layout_constraintStart_toStartOf="@+id/cardView2"
-                        app:layout_constraintTop_toBottomOf="@+id/cardView2" />
+                <Button
+                    android:id="@+id/book"
+                    android:layout_width="0dp"
+                    android:layout_height="45dp"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/round_button"
+                    android:fontFamily="@font/roboto_medium"
+                    android:text="Book This Car"
+                    android:textColor="@color/white"
+                    android:textSize="24sp"
+                    app:layout_constraintEnd_toEndOf="@+id/cardView2"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="@+id/cardView2"
+                    app:layout_constraintTop_toBottomOf="@+id/cardView2" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
         </LinearLayout>

@@ -94,11 +94,12 @@
     <Button
         android:id="@+id/login"
         android:layout_width="0dp"
-        android:layout_height="30dp"
+        android:layout_height="45dp"
         android:layout_marginTop="16dp"
         android:background="@drawable/round_button"
         android:text="Login"
         android:textColor="@android:color/white"
+        android:textSize="24sp"
         app:fontFamily="@font/roboto_mono_bold"
         app:layout_constraintEnd_toEndOf="@+id/password"
         app:layout_constraintHorizontal_bias="0.0"
