@@ -3,6 +3,7 @@ package com.example.carrentalapp.ActivityPages;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -29,6 +30,7 @@ public class VehicleInfoActivity extends AppCompatActivity {
 
     //GOING BACK BUTTON
     private Button back;
+    private Button book;
 
     //VEHICLE INFO FIELD
     private TextView year, manufacturer, model, mileage, seats, type;
@@ -72,6 +74,7 @@ public class VehicleInfoActivity extends AppCompatActivity {
         mileage.setText(vehicle.getMileage()+"");
         seats.setText(vehicle.getSeats()+"");
         type.setText(vehicle.getCategory());
+
     }
 
     private void listenHandler() {
@@ -79,6 +82,14 @@ public class VehicleInfoActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 finish();
+            }
+        });
+
+        book.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent informationPage = new Intent(VehicleInfoActivity.this, BookingCarActivity.class);
+                startActivity(informationPage);
             }
         });
     }
@@ -106,5 +117,7 @@ public class VehicleInfoActivity extends AppCompatActivity {
         option_none = findViewById(R.id.option_none);
         option_basic = findViewById(R.id.option_basic);
         option_premium = findViewById(R.id.option_premium);
+
+        book = findViewById(R.id.book);
     }
 }
