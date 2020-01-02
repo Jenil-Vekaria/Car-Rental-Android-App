@@ -10,9 +10,9 @@ public class Customer {
 
 
     @PrimaryKey
+    @NonNull
     private int customerID;
 
-    @NonNull
     private String firstName;
     private String middleName = "";
     private String lastName;
@@ -31,6 +31,7 @@ public class Customer {
 
     private String password;
 
+    private String title; //MR or MS
 
     public Customer(int customerID,
                     String firstName,  String middleName,      String lastName,
@@ -77,11 +78,15 @@ public class Customer {
                 "Password:          " + password;
     }
 
-    public boolean equals(Customer other){
-        return this.email.equals(other.email) && this.password.equals(other.password);
+
+    public String getTitle() {
+        return title;
     }
 
-    @NonNull
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
     public int getCustomerID() {
         return customerID;
     }
@@ -184,5 +189,9 @@ public class Customer {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public String getFullName(){
+        return title + ". " + firstName + " " + lastName;
     }
 }

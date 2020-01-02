@@ -84,7 +84,7 @@
                 <Button
                     android:id="@+id/loadImage"
                     android:layout_width="85dp"
-                    android:layout_height="34dp"
+                    android:layout_height="@dimen/buttonSize"
                     android:layout_marginTop="8dp"
                     android:background="@drawable/round_button"
                     android:text="Load"
@@ -118,7 +118,7 @@
                 <Button
                     android:id="@+id/add"
                     android:layout_width="0dp"
-                    android:layout_height="30dp"
+                    android:layout_height="@dimen/buttonSize"
                     android:layout_marginTop="24dp"
                     android:background="@drawable/round_button"
                     android:text="Add"
@@ -129,7 +129,7 @@
                 <Button
                     android:id="@+id/vehicle"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="@dimen/buttonSize"
                     android:layout_marginTop="24dp"
                     android:layout_marginBottom="16dp"
                     android:background="@drawable/round_card"

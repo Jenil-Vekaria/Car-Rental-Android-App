@@ -24,19 +24,30 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
-
                 <TextView
-                    android:id="@+id/summary"
+                    android:id="@+id/bookingCompleteText"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/roboto_medium"
-                    android:text="Summary"
+                    android:text="Booking Complete"
                     android:textColor="@color/white"
                     android:textSize="20sp"
                     app:layout_constraintBottom_toBottomOf="@+id/back"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="@+id/back" />
+
+                <TextView
+                    android:id="@+id/bookingID"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto_medium"
+                    android:text="BookingID: 1234"
+                    android:textColor="@color/white"
+                    android:textSize="12sp"
+                    app:layout_constraintEnd_toEndOf="@+id/bookingCompleteText"
+                    app:layout_constraintStart_toStartOf="@+id/bookingCompleteText"
+                    app:layout_constraintTop_toBottomOf="@+id/bookingCompleteText" />
 
                 <Button
                     android:id="@+id/back"
@@ -48,26 +59,62 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
-                <ImageView
-                    android:id="@+id/vehicleImage"
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/booking_complete"
                     android:layout_width="0dp"
-                    android:layout_height="220dp"
-                    android:layout_marginTop="24dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginTop="50dp"
+                    android:layout_marginEnd="24dp"
+                    app:cardBackgroundColor="@color/colorPrimary"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    app:layout_constraintTop_toBottomOf="@+id/bookingID">
 
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/vehicle_info_card"
+                        android:backgroundTint="#24F577"
+                        android:paddingBottom="10dp">
+
+                        <ImageView
+                            android:id="@+id/check_icon"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:srcCompat="@drawable/check_circle_icon" />
+
+                        <TextView
+                            android:id="@+id/bookingIsComplete"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:fontFamily="@font/roboto_bold"
+                            android:text="Your Booking Is Done"
+                            android:textColor="@color/white"
+                            app:layout_constraintEnd_toEndOf="@+id/check_icon"
+                            app:layout_constraintStart_toStartOf="@+id/check_icon"
+                            app:layout_constraintTop_toBottomOf="@+id/check_icon" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </androidx.cardview.widget.CardView>
 
                 <androidx.cardview.widget.CardView
                     android:id="@+id/rental_time"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="24dp"
+                    android:layout_marginTop="16dp"
                     android:layout_marginEnd="24dp"
                     app:cardBackgroundColor="@color/colorPrimary"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/vehicleImage">
+                    app:layout_constraintTop_toBottomOf="@+id/booking_complete">
 
                     <androidx.constraintlayout.widget.ConstraintLayout
                         android:layout_width="match_parent"
@@ -267,7 +314,7 @@
 
                                 <TextView
                                     android:id="@+id/rateText"
-                                    android:layout_width="75dp"
+                                    android:layout_width="70dp"
                                     android:layout_height="wrap_content"
                                     android:fontFamily="@font/roboto"
                                     android:text="Rate:" />
@@ -290,7 +337,7 @@
 
                                 <TextView
                                     android:id="@+id/totalDaysText"
-                                    android:layout_width="75dp"
+                                    android:layout_width="70dp"
                                     android:layout_height="wrap_content"
                                     android:fontFamily="@font/roboto"
                                     android:text="Total Days:" />
@@ -314,10 +361,10 @@
 
                                 <TextView
                                     android:id="@+id/pickupText"
-                                    android:layout_width="75dp"
+                                    android:layout_width="70dp"
                                     android:layout_height="wrap_content"
                                     android:fontFamily="@font/roboto"
-                                    android:text="Pickup:" />
+                                    android:text="Pick Up:" />
 
                                 <TextView
                                     android:id="@+id/pickup"
@@ -337,10 +384,10 @@
 
                                 <TextView
                                     android:id="@+id/dropoffText"
-                                    android:layout_width="75dp"
+                                    android:layout_width="70dp"
                                     android:layout_height="wrap_content"
                                     android:fontFamily="@font/roboto"
-                                    android:text="Return:" />
+                                    android:text="Drop Off:" />
 
                                 <TextView
                                     android:id="@+id/dropoff"
@@ -488,17 +535,6 @@
                                         android:textSize="24sp" />
                                 </LinearLayout>
 
-                                <Button
-                                    android:id="@+id/payNow"
-                                    android:layout_width="200dp"
-                                    android:layout_height="40dp"
-                                    android:layout_weight="1"
-                                    android:background="@drawable/round_button"
-                                    android:backgroundTint="#24F577"
-                                    android:fontFamily="@font/roboto_bold"
-                                    android:text="Pay Now"
-                                    android:textColor="@color/white" />
-
                             </LinearLayout>
 
                         </LinearLayout>
@@ -507,41 +543,13 @@
 
                 </androidx.cardview.widget.CardView>
 
-                <Button
-                    android:id="@+id/book"
-                    android:layout_width="0dp"
-                    android:layout_height="@dimen/buttonSize"
-                    android:layout_marginTop="20dp"
-                    android:layout_marginBottom="16dp"
-                    android:background="@drawable/round_button"
-                    android:enabled="false"
-                    android:fontFamily="@font/roboto_medium"
-                    android:text="Confirm and Book"
-                    android:textColor="@color/white"
-                    android:textSize="18sp"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="@+id/personalInfoText"
-                    app:layout_constraintStart_toStartOf="@+id/personalInfoText"
-                    app:layout_constraintTop_toBottomOf="@+id/personalInfoText" />
-
 
             </androidx.constraintlayout.widget.ConstraintLayout>
         </LinearLayout>
     </ScrollView>
 
-    <com.github.ybq.android.spinkit.SpinKitView
-        android:id="@+id/paidLoading"
-        style="@style/SpinKitView.Large.Wave"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:background="#24F577"
-        android:padding="15dp"
-        app:SpinKit_Color="@color/white"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

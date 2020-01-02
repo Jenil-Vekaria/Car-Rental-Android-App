@@ -15,6 +15,9 @@ public interface BookingDao {
     @Query("SELECT * FROM Booking")
     List<Booking> getAll();
 
+    @Query("SELECT * FROM Booking WHERE customerID = :customerID")
+    List<Booking> getAllCustomerBookings(int customerID);
+
     @Query("SELECT * FROM Booking WHERE bookingID = :id")
     Booking findBooking(int id);
 

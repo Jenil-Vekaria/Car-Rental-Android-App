@@ -4,7 +4,7 @@ android {
     compileSdkVersion 28
     defaultConfig {
         applicationId "com.example.carrentalapp"
-        minSdkVersion 24
+        minSdkVersion 26
         targetSdkVersion 28
         versionCode 1
         versionName "1.0"
@@ -38,4 +38,8 @@ dependencies {
 
     implementation 'com.github.yukuku:ambilwarna:2.0.1'
     implementation 'com.squareup.picasso:picasso:2.71828'
+
+    implementation 'com.github.ybq:Android-SpinKit:1.4.0'
+
+    debugImplementation 'com.amitshekhar.android:debug-db-encrypt:1.0.6'
 }

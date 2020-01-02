@@ -4,6 +4,8 @@ import androidx.room.Entity;
 import androidx.room.ForeignKey;
 import androidx.room.PrimaryKey;
 
+import java.util.Calendar;
+
 @Entity
 public class Billing {
 
@@ -11,23 +13,23 @@ public class Billing {
     private int billingID;
 
     private String billingStatus;
-    private String billingDate;
+    private Calendar billingDate;
 
     private double latefees;
 
-    @ForeignKey(entity = Insurance.class,
+    @ForeignKey(entity = Payment.class,
                 parentColumns = "parentClassColumn",
                 childColumns = "childClassColumn",
                 onDelete = ForeignKey.SET_NULL)
-    private int insuranceID;
+    private int paymentID;
 
 
-    public Billing(int billingID, String billingStatus, String billingDate, double latefees, int insuranceID) {
+    public Billing(int billingID, String billingStatus, Calendar billingDate, double latefees, int paymentID) {
         this.billingID = billingID;
         this.billingStatus = billingStatus;
         this.billingDate = billingDate;
         this.latefees = latefees;
-        this.insuranceID = insuranceID;
+        this.paymentID = paymentID;
     }
 
     public int getBillingID() {
@@ -46,11 +48,11 @@ public class Billing {
         this.billingStatus = billingStatus;
     }
 
-    public String getBillingDate() {
+    public Calendar getBillingDate() {
         return billingDate;
     }
 
-    public void setBillingDate(String billingDate) {
+    public void setBillingDate(Calendar billingDate) {
         this.billingDate = billingDate;
     }
 
@@ -62,11 +64,11 @@ public class Billing {
         this.latefees = latefees;
     }
 
-    public int getInsuranceID() {
-        return insuranceID;
+    public int getPaymentID() {
+        return paymentID;
     }
 
-    public void setInsuranceID(int insuranceID) {
-        this.insuranceID = insuranceID;
+    public void setPaymentID(int paymentID) {
+        this.paymentID = paymentID;
     }
 }
