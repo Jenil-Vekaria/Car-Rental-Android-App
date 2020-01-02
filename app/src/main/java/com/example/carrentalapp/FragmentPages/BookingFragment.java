@@ -1,6 +1,7 @@
 package com.example.carrentalapp.FragmentPages;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -13,6 +14,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
+import com.example.carrentalapp.ActivityPages.ViewBookingActivity;
 import com.example.carrentalapp.Adapter.BookingAdapter;
 import com.example.carrentalapp.Database.BookingDao;
 import com.example.carrentalapp.Database.Project_Database;
@@ -67,7 +69,10 @@ public class BookingFragment extends Fragment implements BookingAdapter.onBookin
 
     @Override
     public void onClick(int position) {
-
+        int bookingID = bookings.get(position).getBookingID();
+        Intent viewBooking = new Intent(getContext(), ViewBookingActivity.class);
+        viewBooking.putExtra("BOOKINGID",""+bookingID);
+        startActivity(viewBooking);
     }
 
     //DEBUGING

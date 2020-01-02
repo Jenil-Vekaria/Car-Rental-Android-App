@@ -60,7 +60,7 @@
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
-                    android:id="@+id/textView"
+                    android:id="@+id/vehiclePrice"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:background="@drawable/price_tag"
@@ -78,9 +78,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="24dp"
-                    app:layout_constraintBottom_toBottomOf="@+id/textView"
+                    app:layout_constraintBottom_toBottomOf="@+id/vehiclePrice"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="@+id/textView">
+                    app:layout_constraintTop_toTopOf="@+id/vehiclePrice">
 
                     <ImageView
                         android:id="@+id/imageView"
@@ -111,9 +111,9 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="24dp"
                     android:visibility="visible"
-                    app:layout_constraintBottom_toBottomOf="@+id/textView"
+                    app:layout_constraintBottom_toBottomOf="@+id/vehiclePrice"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="@+id/textView">
+                    app:layout_constraintTop_toTopOf="@+id/vehiclePrice">
 
                     <ImageView
                         android:id="@+id/checkMark"
@@ -149,7 +149,7 @@
                     app:cardBackgroundColor="@color/colorPrimary"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/textView">
+                    app:layout_constraintTop_toBottomOf="@+id/vehiclePrice">
 
                     <androidx.constraintlayout.widget.ConstraintLayout
                         android:layout_width="match_parent"
@@ -177,7 +177,7 @@
                             android:fontFamily="@font/roboto_medium"
                             android:text="Vehicle Specs"
                             android:textColor="@color/colorPrimary"
-                            android:textSize="14sp"
+                            android:textSize="18sp"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent" />
 
@@ -348,6 +348,7 @@
                             android:fontFamily="@font/roboto_medium"
                             android:text="Insurance"
                             android:textColor="@color/colorPrimary"
+                            android:textSize="18sp"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent" />
 
@@ -382,7 +383,7 @@
                                     android:layout_marginBottom="5dp"
                                     android:fontFamily="@font/roboto"
                                     android:paddingLeft="30dp"
-                                    android:text="$0/Day"
+                                    android:text="$0"
                                     android:textSize="12sp" />
 
                                 <LinearLayout
@@ -500,7 +501,7 @@
                                     android:layout_marginBottom="5dp"
                                     android:fontFamily="@font/roboto"
                                     android:paddingLeft="30dp"
-                                    android:text="$0/Day"
+                                    android:text="$15"
                                     android:textSize="12sp" />
 
                                 <LinearLayout
@@ -619,7 +620,7 @@
                                     android:layout_marginBottom="5dp"
                                     android:fontFamily="@font/roboto"
                                     android:paddingLeft="30dp"
-                                    android:text="$25/Day"
+                                    android:text="$25"
                                     android:textSize="12sp" />
 
                                 <LinearLayout

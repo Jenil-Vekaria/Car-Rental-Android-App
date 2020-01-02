@@ -7,15 +7,11 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.ImageView;
-import android.widget.ProgressBar;
 import android.widget.TextView;
 
-import com.example.carrentalapp.Database.BillingDao;
 import com.example.carrentalapp.Database.BookingDao;
 import com.example.carrentalapp.Database.CustomerDao;
 import com.example.carrentalapp.Database.InsuranceDao;
-import com.example.carrentalapp.Database.PaymentDao;
 import com.example.carrentalapp.Database.Project_Database;
 import com.example.carrentalapp.Database.VehicleDao;
 import com.example.carrentalapp.Model.Booking;
@@ -23,14 +19,13 @@ import com.example.carrentalapp.Model.Customer;
 import com.example.carrentalapp.Model.Insurance;
 import com.example.carrentalapp.Model.Vehicle;
 import com.example.carrentalapp.R;
-import com.squareup.picasso.Picasso;
 
 import java.time.temporal.ChronoUnit;
 import java.util.Calendar;
 
-public class BookingCompleteActivity extends AppCompatActivity {
+public class ViewBookingActivity extends AppCompatActivity {
 
-    private Button back;
+    private Button back, returnCar;
 
     //DRIVER DETAILS
     private TextView name, email, phoneNumber;
@@ -39,6 +34,7 @@ public class BookingCompleteActivity extends AppCompatActivity {
     private TextView bookingID, vehicleName, rate, totalDays, _pickup, _return, insurance, insuranceRate, totalCost;
 
     //DATABASE TABLE
+    private BookingDao bookingDao;
     private CustomerDao customerDao;
     private VehicleDao vehicleDao;
     private InsuranceDao insuranceDao;
@@ -50,11 +46,10 @@ public class BookingCompleteActivity extends AppCompatActivity {
     //VEHICLE
     private Vehicle vehicle;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_booking_complete);
+        setContentView(R.layout.activity_view_booking);
 
         initComponents();
         listenHandler();
@@ -86,6 +81,9 @@ public class BookingCompleteActivity extends AppCompatActivity {
         totalCost = findViewById(R.id.totalCost);
 
         //DATABASE TABLE
+        bookingDao = Room.databaseBuilder(getApplicationContext(), Project_Database.class, "car_rental_db").allowMainThreadQueries()
+                    .build()
+                    .bookingDao();
         customerDao = Room.databaseBuilder(getApplicationContext(), Project_Database.class, "car_rental_db").allowMainThreadQueries()
                 .build()
                 .customerDao();
@@ -97,7 +95,8 @@ public class BookingCompleteActivity extends AppCompatActivity {
                 .insuranceDao();
 
         //GET BOOKING OBJECT WHICH WAS PASSED FROM PREVIOUS PAGE
-        booking = (Booking) getIntent().getSerializableExtra("BOOKING");
+        int _bookingID = Integer.valueOf(getIntent().getStringExtra("BOOKINGID"));
+        booking = bookingDao.findBooking(_bookingID);
         chosenInsurance = insuranceDao.findInsurance(booking.getInsuranceID());
         vehicle = vehicleDao.findVehicle(booking.getVehicleID());
 
@@ -108,9 +107,7 @@ public class BookingCompleteActivity extends AppCompatActivity {
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent homePage = new Intent(BookingCompleteActivity.this,UserViewActivity.class);
-                startActivity(homePage);
-//                finish();
+                finish();
             }
         });
     }
