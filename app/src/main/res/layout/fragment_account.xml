@@ -11,13 +11,11 @@
         android:layout_height="match_parent"
         android:background="#FFAB00">
 
-        <TextView
-            android:id="@+id/textView2"
+        <Button
+            android:id="@+id/logout"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Account"
-            android:textColor="@android:color/black"
-            android:textSize="36sp"
+            android:text="Logout"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

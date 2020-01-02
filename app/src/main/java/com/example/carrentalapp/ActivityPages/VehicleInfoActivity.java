@@ -2,6 +2,7 @@ package com.example.carrentalapp.ActivityPages;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.room.Room;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -9,8 +10,13 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.example.carrentalapp.Database.InsuranceDao;
+import com.example.carrentalapp.Database.Project_Database;
+import com.example.carrentalapp.Model.Insurance;
 import com.example.carrentalapp.Model.Vehicle;
 import com.example.carrentalapp.R;
 import com.squareup.picasso.Picasso;
@@ -36,7 +42,12 @@ public class VehicleInfoActivity extends AppCompatActivity {
     private TextView year, manufacturer, model, mileage, seats, type;
 
     //INSURANCE OPTION
-    private RadioButton option_none, option_basic, option_premium;
+    private RadioGroup insuranceOption;
+
+    private String chosenInsurance = "";
+
+    //INSURANCE DATABASE TABLE
+    InsuranceDao insuranceDao;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,6 +60,76 @@ public class VehicleInfoActivity extends AppCompatActivity {
 
 
 
+    }
+
+    private void initComponents() {
+
+        //INITIALIZING COMPONENTS
+        vehicle = (Vehicle) getIntent().getSerializableExtra("VEHICLE");
+        back = findViewById(R.id.back);
+        vehicleTitle = findViewById(R.id.vehicleTitle);
+        vehicleImage = findViewById(R.id.vehicleImage);
+
+        available = findViewById(R.id.available);
+        notAvailable = findViewById(R.id.notAvailable);
+
+        //VEHICLE INFO FIELD
+        year = findViewById(R.id.year);
+        manufacturer = findViewById(R.id.manufacturer);
+        model = findViewById(R.id.model);
+        mileage = findViewById(R.id.mileage);
+        seats = findViewById(R.id.seats);
+        type = findViewById(R.id.type);
+
+        //INSURANCE OPTION
+        insuranceOption = findViewById(R.id.insuranceOption);
+
+        //BOOK BUTTON
+        book = findViewById(R.id.book_this_car);
+
+        //INSURANCE DATABASE TABLE
+        insuranceDao = Room.databaseBuilder(getApplicationContext(), Project_Database.class, "car_rental_db")
+                .allowMainThreadQueries()
+                .build()
+                .insuranceDao();
+    }
+
+    private void listenHandler() {
+
+        //BACK ARROW BUTTON LISTENER
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
+
+        //BOOKING BUTTON -> THIS WILL REDIRECT TO BOOKING PAGE
+        book.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent informationPage = new Intent(VehicleInfoActivity.this, BookingCarActivity.class);
+                informationPage.putExtra("INSURANCEID",getInsuranceID(chosenInsurance));
+                informationPage.putExtra("VEHICLEID",vehicle.getVehicleID()+"");
+                startActivity(informationPage);
+            }
+        });
+
+
+        insuranceOption.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                RadioButton option = findViewById(checkedId);
+                chosenInsurance = option.getText().toString().toLowerCase();
+            }
+        });
+
+
+    }
+
+    private String getInsuranceID(String chosenInsurance){
+        Insurance insurance = new Insurance(chosenInsurance,-1);
+        return insurance.getInsuranceID();
     }
 
     private void displayVehicleInfo() {
@@ -77,47 +158,10 @@ public class VehicleInfoActivity extends AppCompatActivity {
 
     }
 
-    private void listenHandler() {
-        back.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                finish();
-            }
-        });
-
-        book.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent informationPage = new Intent(VehicleInfoActivity.this, BookingCarActivity.class);
-                startActivity(informationPage);
-            }
-        });
+    //DEBUGING
+    private void toast(String txt){
+        Toast toast = Toast.makeText(getApplicationContext(),txt,Toast.LENGTH_SHORT);
+        toast.show();
     }
 
-    private void initComponents() {
-
-        //INITIALIZING COMPONENTS
-        vehicle = (Vehicle) getIntent().getSerializableExtra("VEHICLE");
-        back = findViewById(R.id.back);
-        vehicleTitle = findViewById(R.id.vehicleTitle);
-        vehicleImage = findViewById(R.id.vehicleImage);
-
-        available = findViewById(R.id.available);
-        notAvailable = findViewById(R.id.notAvailable);
-
-        //VEHICLE INFO FIELD
-        year = findViewById(R.id.year);
-        manufacturer = findViewById(R.id.manufacturer);
-        model = findViewById(R.id.model);
-        mileage = findViewById(R.id.mileage);
-        seats = findViewById(R.id.seats);
-        type = findViewById(R.id.type);
-
-        //INSURANCE OPTION
-        option_none = findViewById(R.id.option_none);
-        option_basic = findViewById(R.id.option_basic);
-        option_premium = findViewById(R.id.option_premium);
-
-        book = findViewById(R.id.book);
-    }
 }

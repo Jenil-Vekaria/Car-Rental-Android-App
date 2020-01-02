@@ -16,7 +16,7 @@ public interface InsuranceDao {
     List<Insurance> getAll();
 
     @Query("SELECT * FROM Insurance WHERE insuranceID = :id")
-    Insurance findInsurance(int id);
+    Insurance findInsurance(String id);
 
     @Query("DELETE FROM Insurance WHERE insuranceID >= 0")
     void deleteAll();

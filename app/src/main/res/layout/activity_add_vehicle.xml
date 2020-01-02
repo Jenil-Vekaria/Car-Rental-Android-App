@@ -233,7 +233,7 @@
                 <Button
                     android:id="@+id/add"
                     android:layout_width="0dp"
-                    android:layout_height="30dp"
+                    android:layout_height="@dimen/buttonSize"
                     android:layout_marginTop="24dp"
                     android:background="@drawable/round_button"
                     android:text="Add"
@@ -245,7 +245,7 @@
                 <Button
                     android:id="@+id/reset"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="@dimen/buttonSize"
                     android:layout_marginTop="32dp"
                     android:background="@drawable/round_button"
                     android:backgroundTint="#D50000"
@@ -259,7 +259,7 @@
                 <Button
                     android:id="@+id/vehicleCategory"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="@dimen/buttonSize"
                     android:layout_marginTop="16dp"
                     android:background="@drawable/round_card"
                     android:paddingLeft="10dp"
@@ -284,7 +284,7 @@
                 <Button
                     android:id="@+id/viewResult"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="@dimen/buttonSize"
                     android:layout_marginTop="32dp"
                     android:layout_marginBottom="32dp"
                     android:background="@drawable/round_card"
@@ -310,7 +310,7 @@
                 <Button
                     android:id="@+id/load"
                     android:layout_width="87dp"
-                    android:layout_height="36dp"
+                    android:layout_height="@dimen/buttonSize"
                     android:layout_marginTop="8dp"
                     android:background="@drawable/round_button"
                     android:text="Load"

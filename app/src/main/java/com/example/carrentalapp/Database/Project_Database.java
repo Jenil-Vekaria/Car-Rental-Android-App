@@ -3,7 +3,9 @@ package com.example.carrentalapp.Database;
 
 import androidx.room.Database;
 import androidx.room.RoomDatabase;
+import androidx.room.TypeConverters;
 
+import com.example.carrentalapp.Converter.Converter;
 import com.example.carrentalapp.Model.Administrator;
 import com.example.carrentalapp.Model.Billing;
 import com.example.carrentalapp.Model.Booking;
@@ -16,7 +18,8 @@ import com.example.carrentalapp.Model.VehicleCategory;
 
 @Database(entities = {Customer.class,       VehicleCategory.class,  Vehicle.class,
                       Administrator.class,  Billing.class,          Booking.class,
-                      Insurance.class,      Payment.class}, version = 1, exportSchema = false)
+                      Insurance.class,      Payment.class}, version = 1)
+@TypeConverters({Converter.class})
 public abstract class Project_Database extends RoomDatabase {
     public abstract CustomerDao customerDao();
     public abstract VehicleCategoryDao vehicleCategoryDao();

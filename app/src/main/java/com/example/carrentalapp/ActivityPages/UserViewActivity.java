@@ -24,6 +24,8 @@ public class UserViewActivity extends AppCompatActivity {
     private BookingFragment bookingFragment;
     private AccountFragment accountFragment;
 
+    private String loggedInCustomerID;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -48,17 +50,26 @@ public class UserViewActivity extends AppCompatActivity {
                         return true;
 
                     case R.id.nav_booking:
-                        setFragment(bookingFragment);
+                        setFragment(bookingFragment, loggedInCustomerID);
                         return true;
 
                     case R.id.nav_account :
-                        setFragment(accountFragment);
+                        setFragment(accountFragment, loggedInCustomerID);
                         return true;
                 }
 
                 return false;
             }
         });
+    }
+
+    private void setFragment(Fragment fragment,String Data) {
+        Bundle bundle = new Bundle();
+        bundle.putString("CUSTOMERID",Data);
+        fragment.setArguments(bundle);
+        FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+        fragmentTransaction.replace(R.id.framelayout,fragment);
+        fragmentTransaction.commit();
     }
 
     private void setFragment(Fragment fragment) {
@@ -74,5 +85,8 @@ public class UserViewActivity extends AppCompatActivity {
         vehicleCategoryFragment = new VehicleCategoryFragment();
         bookingFragment= new BookingFragment();
         accountFragment = new AccountFragment();
+
+        loggedInCustomerID = getIntent().getStringExtra("CUSTOMERID");
+
     }
 }
