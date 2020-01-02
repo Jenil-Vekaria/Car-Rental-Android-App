@@ -2,9 +2,11 @@ package com.example.carrentalapp.ActivityPages;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.core.content.ContextCompat;
 import androidx.room.Room;
 
 import android.content.Intent;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -29,6 +31,8 @@ public class VehicleInfoActivity extends AppCompatActivity {
     private TextView vehicleTitle;
     //VEHICLE IMAGE OBJECT
     private ImageView vehicleImage;
+    //VEHICLE PRICE
+    private TextView vehiclePrice;
 
     //VEHICLE AVAILABILITY FIELD
     private ConstraintLayout available;
@@ -80,6 +84,9 @@ public class VehicleInfoActivity extends AppCompatActivity {
         mileage = findViewById(R.id.mileage);
         seats = findViewById(R.id.seats);
         type = findViewById(R.id.type);
+
+        //VEHICLE PRICE
+        vehiclePrice = findViewById(R.id.vehiclePrice);
 
         //INSURANCE OPTION
         insuranceOption = findViewById(R.id.insuranceOption);
@@ -143,9 +150,15 @@ public class VehicleInfoActivity extends AppCompatActivity {
         if(vehicle.isAvailability()){
             available.setVisibility(ConstraintLayout.VISIBLE);
             notAvailable.setVisibility(ConstraintLayout.INVISIBLE);
+            book.setEnabled(true);
+            book.setBackground(ContextCompat.getDrawable(VehicleInfoActivity.this,R.drawable.round_button));
+            book.setText("Book This Car");
         }else{
             available.setVisibility(ConstraintLayout.INVISIBLE);
             notAvailable.setVisibility(ConstraintLayout.VISIBLE);
+            book.setEnabled(false);
+            book.setBackground(ContextCompat.getDrawable(VehicleInfoActivity.this,R.drawable.disable_button));
+            book.setText("Vehicle Not Available");
         }
 
         //SET VEHICLE SPECS
@@ -155,6 +168,8 @@ public class VehicleInfoActivity extends AppCompatActivity {
         mileage.setText(vehicle.getMileage()+"");
         seats.setText(vehicle.getSeats()+"");
         type.setText(vehicle.getCategory());
+
+        vehiclePrice.setText("$" + vehicle.getPrice()+"/Day");
 
     }
 

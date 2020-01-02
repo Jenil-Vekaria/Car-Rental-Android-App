@@ -202,6 +202,7 @@ public class BookingSummaryActivity extends AppCompatActivity {
         Payment payment = new Payment(paymentID,"Credit",calculateTotalCost(),0);
         Billing billing = new Billing(billingID,"Paid",currentDate,0,paymentID);
         booking.setBillingID(billingID);
+        booking.setBookingStatus("Waiting for approval");
 
         bookingDao.insert(booking);
         billingDao.insert(billing);
@@ -228,7 +229,7 @@ public class BookingSummaryActivity extends AppCompatActivity {
         _return.setText(booking.getReturnTime());
 
         insurance.setText(chosenInsurance.getCoverageType());
-        insuranceRate.setText("$"+chosenInsurance.getCost() + "/Day");
+        insuranceRate.setText("$"+chosenInsurance.getCost());
 
         Picasso.get().load(vehicle.getVehicleImageURL()).into(vehicleImage);
     }
@@ -248,7 +249,7 @@ public class BookingSummaryActivity extends AppCompatActivity {
         double _vehicleRate = vehicle.getPrice();
         double _insuranceRate = chosenInsurance.getCost();
 
-        return (_days*_vehicleRate) + (_days*_insuranceRate);
+        return (_days*_vehicleRate) + _insuranceRate;
     }
 
     private int generateID(int start, int end){
