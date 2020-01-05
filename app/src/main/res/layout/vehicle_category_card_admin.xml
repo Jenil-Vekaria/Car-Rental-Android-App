@@ -40,34 +40,32 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <Button
-                android:id="@+id/select"
-                android:layout_width="124dp"
-                android:layout_height="36dp"
-                android:background="@drawable/select_button"
+                android:id="@+id/edit"
+                android:layout_width="160dp"
+                android:layout_height="40dp"
+                android:background="@drawable/edit_button"
                 android:fontFamily="@font/roboto_light"
-                android:text="Select"
-                android:textSize="18sp"
+                android:text="Edit"
+                android:textSize="24sp"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent" />
+                app:layout_constraintStart_toStartOf="parent" />
 
-            <TextView
-                android:id="@+id/quantity"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
+            <Button
+                android:id="@+id/view"
+                android:layout_width="160dp"
+                android:layout_height="40dp"
+                android:background="@drawable/view_button"
                 android:fontFamily="@font/roboto_light"
-                android:text="Total: 20"
-                android:textColor="@android:color/background_light"
-                android:textSize="18sp"
-                app:layout_constraintBottom_toBottomOf="@+id/select"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/select" />
+                android:text="View"
+                android:textSize="24sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/categoryImage" />
 
             <ImageView
                 android:id="@+id/categoryImage"
                 android:layout_width="322dp"
                 android:layout_height="235dp"
-                app:layout_constraintBottom_toTopOf="@+id/select"
+                app:layout_constraintBottom_toTopOf="@+id/edit"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/vehicleCategory" />

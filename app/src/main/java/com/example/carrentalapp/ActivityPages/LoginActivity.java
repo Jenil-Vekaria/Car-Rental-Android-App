@@ -13,11 +13,13 @@ import android.widget.Toast;
 
 import androidx.room.Room;
 
+import com.example.carrentalapp.Database.AdministratorDao;
 import com.example.carrentalapp.Database.CustomerDao;
 import com.example.carrentalapp.Database.InsuranceDao;
 import com.example.carrentalapp.Database.Project_Database;
 import com.example.carrentalapp.Database.VehicleCategoryDao;
 import com.example.carrentalapp.Database.VehicleDao;
+import com.example.carrentalapp.Model.Administrator;
 import com.example.carrentalapp.Model.Customer;
 import com.example.carrentalapp.Model.Insurance;
 import com.example.carrentalapp.Model.Vehicle;
@@ -113,7 +115,24 @@ public class LoginActivity extends AppCompatActivity {
                     homePage.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                     startActivity(homePage);
                 }else{
-                    toast("Unsuccessful");
+
+                    //CHECK FOR ADMIN LOGIN
+                    AdministratorDao administratorDao = db.administratorDao();
+                    Administrator admin = administratorDao.findAdministrator(email.getText().toString(), password.getText().toString());
+
+                    if(admin != null){
+                        Session.save(LoginActivity.this,"admin","admin");
+                        Session.save(LoginActivity.this,"isLoggedIn","true");
+
+                        Intent homePage = new Intent(LoginActivity.this,UserViewActivity.class);
+                        homePage.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                        startActivity(homePage);
+                    }
+                    else{
+                        toast("Unsuccessful");
+                    }
+
+
                 }
             }
         });

@@ -1,6 +1,7 @@
 package com.example.carrentalapp.FragmentPages;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -16,12 +17,14 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.Toast;
 
+import com.example.carrentalapp.ActivityPages.AddVehicleCategoryActivity;
 import com.example.carrentalapp.Adapter.VehicleCategoryAdapter;
 import com.example.carrentalapp.Database.Project_Database;
 import com.example.carrentalapp.Database.VehicleCategoryDao;
 import com.example.carrentalapp.FragmentPages.VehicleFragment;
 import com.example.carrentalapp.Model.VehicleCategory;
 import com.example.carrentalapp.R;
+import com.example.carrentalapp.Session.Session;
 
 import java.util.ArrayList;
 
@@ -48,8 +51,6 @@ public class VehicleCategoryFragment extends Fragment implements VehicleCategory
         View view = inflater.inflate(R.layout.fragment_vehicle_category, container, false);
         
         initComponents(view);
-        listenHandler();
-
         return view;
     }
 
@@ -64,22 +65,15 @@ public class VehicleCategoryFragment extends Fragment implements VehicleCategory
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
 
         list = (ArrayList<VehicleCategory>) vehicleCategoryDao.getAllCategory();
-        adapter = new VehicleCategoryAdapter(getContext(), list,this);
+
+        if(Session.read(getContext(),"admin","-1").equals("admin"))
+            adapter = new VehicleCategoryAdapter(getContext(), list,this,R.layout.vehicle_category_card_admin);
+        else
+            adapter = new VehicleCategoryAdapter(getContext(), list,this,R.layout.vehicle_category_card);
+
         recyclerView.setAdapter(adapter);
     }
 
-    private void listenHandler() {
-
-//        home.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Intent homePage = new Intent(HomePageActivity.this, LoginActivity.class);
-//                startActivity(homePage);
-//            }
-//        });
-
-
-    }
 
     //DEBUGING
     private void toast(String txt) {
@@ -109,6 +103,20 @@ public class VehicleCategoryFragment extends Fragment implements VehicleCategory
     @Override
     public void onSelectClick(int position) {
         toast(list.get(position).getCategory() + " Select");
+    }
+
+    @Override
+    public void onEditClick(int position) {
+        String selectedCategory = list.get(position).getCategory();
+        Intent vehicleCategoryEdit = new Intent(getContext(),AddVehicleCategoryActivity.class);
+        vehicleCategoryEdit.putExtra("CATEGORY",selectedCategory);
+        vehicleCategoryEdit.putExtra("ADDORUPDATE","Edit");
+        startActivity(vehicleCategoryEdit);
+    }
+
+    @Override
+    public void onViewClick(int position) {
+        toast(list.get(position).getCategory() + " View");
     }
 
 }

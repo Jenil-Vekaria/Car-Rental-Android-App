@@ -38,7 +38,7 @@ public class VehicleCategory {
     public String toString() {
         return  "\n"+
                 "CategoryID:    " + categoryID + "\n" +
-                "Category:      " + capitalize(category)+ "\n" +
+                "Category:      " + category+ "\n" +
                 "Quantity:      " + quantity + "\n" +
                 "Color:         " + colorCard;
     }
@@ -76,6 +76,7 @@ public class VehicleCategory {
         this.quantity += quantity;
     }
 
-
-
+    public void setCategory(String category) {
+        this.category = category.toLowerCase();
+    }
 }

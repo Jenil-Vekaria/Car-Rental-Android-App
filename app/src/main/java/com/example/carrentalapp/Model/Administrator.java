@@ -12,11 +12,14 @@ public class Administrator {
     private String firstName;
     private String lastName;
 
+    private String password;
 
-    public Administrator(int administratorID, String firstName, String lastName) {
+
+    public Administrator(int administratorID, String firstName, String lastName, String password) {
         this.administratorID = administratorID;
         this.firstName = firstName;
         this.lastName = lastName;
+        this.password = password;
     }
 
     public int getAdministratorID() {
@@ -41,5 +44,13 @@ public class Administrator {
 
     public void setLastName(String lastName) {
         this.lastName = lastName;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 }

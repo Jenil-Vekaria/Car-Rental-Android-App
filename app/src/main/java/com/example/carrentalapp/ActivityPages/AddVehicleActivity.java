@@ -35,9 +35,7 @@ public class AddVehicleActivity extends AppCompatActivity {
     private CheckBox availability;
 
     private Button add;
-    private Button reset;
     private Button vehicleCategory;
-    private Button viewResult;
     private Button load;
 
     private ImageView vehicleImage;
@@ -66,9 +64,7 @@ public class AddVehicleActivity extends AppCompatActivity {
         imageURL = findViewById(R.id.imageURL);
         availability = findViewById(R.id.availability);
         add = findViewById(R.id.add);
-        reset = findViewById(R.id.reset);
         vehicleCategory = findViewById(R.id.vehicleCategory);
-        viewResult = findViewById(R.id.viewResult);
 
         load = findViewById(R.id.load);
         vehicleImage = findViewById(R.id.viewVehicle);
@@ -98,15 +94,6 @@ public class AddVehicleActivity extends AppCompatActivity {
             }
         });
 
-        reset.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                vehicleCategoryDao.deleteAll();
-                vehicleDao.deleteAll();
-                toast("RESET");
-            }
-        });
-
         vehicleCategory.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -115,14 +102,6 @@ public class AddVehicleActivity extends AppCompatActivity {
             }
         });
 
-        viewResult.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                toast("View Result");
-                Intent viewResult = new Intent(AddVehicleActivity.this,UserViewActivity.class);
-                startActivity(viewResult);
-            }
-        });
 
         load.setOnClickListener(new View.OnClickListener() {
             @Override

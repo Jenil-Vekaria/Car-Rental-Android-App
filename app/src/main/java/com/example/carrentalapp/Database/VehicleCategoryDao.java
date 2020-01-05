@@ -4,6 +4,7 @@ import androidx.room.Dao;
 import androidx.room.Delete;
 import androidx.room.Insert;
 import androidx.room.Query;
+import androidx.room.Update;
 
 import com.example.carrentalapp.Model.Customer;
 import com.example.carrentalapp.Model.Vehicle;
@@ -20,6 +21,9 @@ public interface VehicleCategoryDao {
 
     @Query("SELECT * FROM VehicleCategory WHERE category = :category")
     VehicleCategory findVehicleCategory(String category);
+
+    @Query("SELECT * FROM VehicleCategory WHERE categoryID = :categoryID")
+    VehicleCategory findVehicleCategory(int categoryID);
 
     @Query( "UPDATE VehicleCategory " +
             "SET quantity = (SELECT COUNT(vehicleID) FROM Vehicle WHERE category = :category GROUP BY category)" +
@@ -44,4 +48,6 @@ public interface VehicleCategoryDao {
     @Insert
     void insert(VehicleCategory vehicleCategory);
 
+    @Update
+    void update(VehicleCategory vehicleCategory);
 }

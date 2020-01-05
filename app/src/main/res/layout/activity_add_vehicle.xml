@@ -25,7 +25,7 @@
                 android:layout_height="match_parent">
 
                 <TextView
-                    android:id="@+id/welcome_to_title"
+                    android:id="@+id/addVehicleText"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="56dp"
@@ -48,7 +48,7 @@
                     android:text="Category"
                     android:textColor="@color/colorSecondary"
                     app:layout_constraintStart_toStartOf="@+id/category"
-                    app:layout_constraintTop_toBottomOf="@+id/welcome_to_title" />
+                    app:layout_constraintTop_toBottomOf="@+id/addVehicleText" />
 
                 <EditText
                     android:id="@+id/category"
@@ -235,40 +235,17 @@
                     android:layout_width="0dp"
                     android:layout_height="@dimen/buttonSize"
                     android:layout_marginTop="24dp"
+                    android:layout_marginBottom="16dp"
                     android:background="@drawable/round_button"
+                    android:fontFamily="@font/roboto"
                     android:text="Add"
+                    android:textColor="@color/white"
+                    android:textSize="18sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="@+id/year"
                     app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toStartOf="@+id/year"
                     app:layout_constraintTop_toBottomOf="@+id/load" />
-
-                <Button
-                    android:id="@+id/reset"
-                    android:layout_width="wrap_content"
-                    android:layout_height="@dimen/buttonSize"
-                    android:layout_marginTop="32dp"
-                    android:background="@drawable/round_button"
-                    android:backgroundTint="#D50000"
-                    android:paddingLeft="10dp"
-                    android:paddingRight="10dp"
-                    android:text="Reset"
-                    app:layout_constraintEnd_toEndOf="@+id/add"
-                    app:layout_constraintStart_toStartOf="@+id/add"
-                    app:layout_constraintTop_toBottomOf="@+id/add" />
-
-                <Button
-                    android:id="@+id/vehicleCategory"
-                    android:layout_width="wrap_content"
-                    android:layout_height="@dimen/buttonSize"
-                    android:layout_marginTop="16dp"
-                    android:background="@drawable/round_card"
-                    android:paddingLeft="10dp"
-                    android:paddingRight="10dp"
-                    android:text="Add Vehicle Category"
-                    app:layout_constraintEnd_toEndOf="@+id/reset"
-                    app:layout_constraintHorizontal_bias="0.471"
-                    app:layout_constraintStart_toStartOf="@+id/reset"
-                    app:layout_constraintTop_toBottomOf="@+id/reset" />
 
                 <CheckBox
                     android:id="@+id/availability"
@@ -280,22 +257,6 @@
                     android:textColor="@color/colorSecondary"
                     app:layout_constraintStart_toStartOf="@+id/imageURL"
                     app:layout_constraintTop_toBottomOf="@+id/imageURL" />
-
-                <Button
-                    android:id="@+id/viewResult"
-                    android:layout_width="wrap_content"
-                    android:layout_height="@dimen/buttonSize"
-                    android:layout_marginTop="32dp"
-                    android:layout_marginBottom="32dp"
-                    android:background="@drawable/round_card"
-                    android:backgroundTint="#64DD17"
-                    android:paddingLeft="10dp"
-                    android:paddingRight="10dp"
-                    android:text="View Result"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="@+id/vehicleCategory"
-                    app:layout_constraintStart_toStartOf="@+id/vehicleCategory"
-                    app:layout_constraintTop_toBottomOf="@+id/vehicleCategory" />
 
                 <ImageView
                     android:id="@+id/viewVehicle"

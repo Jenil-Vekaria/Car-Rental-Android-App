@@ -47,7 +47,7 @@
                     app:layout_constraintTop_toBottomOf="@+id/categoryText" />
 
                 <TextView
-                    android:id="@+id/welcome_to_title"
+                    android:id="@+id/addCategoryTitle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="52dp"
@@ -69,7 +69,7 @@
                     android:text="Category"
                     android:textColor="@color/colorSecondary"
                     app:layout_constraintStart_toStartOf="@+id/category"
-                    app:layout_constraintTop_toBottomOf="@+id/welcome_to_title" />
+                    app:layout_constraintTop_toBottomOf="@+id/addCategoryTitle" />
 
                 <TextView
                     android:id="@+id/categoryIDText"
@@ -121,25 +121,13 @@
                     android:layout_height="@dimen/buttonSize"
                     android:layout_marginTop="24dp"
                     android:background="@drawable/round_button"
+                    android:fontFamily="@font/roboto"
                     android:text="Add"
+                    android:textColor="@color/white"
+                    android:textSize="18sp"
                     app:layout_constraintEnd_toEndOf="@+id/imageURL"
                     app:layout_constraintStart_toStartOf="@+id/imageURL"
                     app:layout_constraintTop_toBottomOf="@+id/colorDisplay" />
-
-                <Button
-                    android:id="@+id/vehicle"
-                    android:layout_width="wrap_content"
-                    android:layout_height="@dimen/buttonSize"
-                    android:layout_marginTop="24dp"
-                    android:layout_marginBottom="16dp"
-                    android:background="@drawable/round_card"
-                    android:paddingLeft="10dp"
-                    android:paddingRight="10dp"
-                    android:text="Add Vehicle"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="@+id/reset"
-                    app:layout_constraintStart_toStartOf="@+id/reset"
-                    app:layout_constraintTop_toBottomOf="@+id/reset" />
 
                 <TextView
                     android:id="@+id/imageURLText"
@@ -150,20 +138,6 @@
                     android:textColor="@color/colorSecondary"
                     app:layout_constraintStart_toStartOf="@+id/categoryIDText"
                     app:layout_constraintTop_toBottomOf="@+id/categoryID" />
-
-                <Button
-                    android:id="@+id/reset"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="32dp"
-                    android:background="@drawable/round_button"
-                    android:backgroundTint="#D50000"
-                    android:paddingLeft="10dp"
-                    android:paddingRight="10dp"
-                    android:text="Reset"
-                    app:layout_constraintEnd_toEndOf="@+id/add"
-                    app:layout_constraintStart_toStartOf="@+id/add"
-                    app:layout_constraintTop_toBottomOf="@+id/add" />
 
                 <Button
                     android:id="@+id/colorDisplay"

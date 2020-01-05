@@ -23,6 +23,7 @@ import com.example.carrentalapp.Database.Project_Database;
 import com.example.carrentalapp.Database.VehicleDao;
 import com.example.carrentalapp.Model.Vehicle;
 import com.example.carrentalapp.R;
+import com.example.carrentalapp.Session.Session;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -59,8 +60,8 @@ public class VehicleFragment extends Fragment implements VehicleAdapter.onVehicl
         selectVehicleCategory = getArguments().getString("CATEGORY");
 
         vehicleDao = Room.databaseBuilder(getContext(), Project_Database.class, "car_rental_db").allowMainThreadQueries()
-                .build()
-                .vehicleDao();
+                    .build()
+                    .vehicleDao();
 
 
         recyclerView = view.findViewById(R.id.recyclerView);
@@ -68,7 +69,13 @@ public class VehicleFragment extends Fragment implements VehicleAdapter.onVehicl
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
 
         list = (ArrayList<Vehicle>)vehicleDao.getCategoryVehicle(selectVehicleCategory);
-        adapter = new VehicleAdapter(getContext(), list,this);
+
+        //IF LOGGED IN USER IS ADMIN THEN DISPLAY vehicle_card_admin
+        if(Session.read(getContext(),"admin","-1").equals("admin"))
+            adapter = new VehicleAdapter(getContext(), list,this,R.layout.vehicle_card_admin);
+        else
+            adapter = new VehicleAdapter(getContext(), list,this,R.layout.vehicle_card);
+
         recyclerView.setAdapter(adapter);
 
 
@@ -80,6 +87,16 @@ public class VehicleFragment extends Fragment implements VehicleAdapter.onVehicl
         Intent vehicleInfoPage = new Intent(getActivity(), VehicleInfoActivity.class);
         vehicleInfoPage.putExtra("VEHICLE",list.get(position));
         startActivity(vehicleInfoPage);
+    }
+
+    @Override
+    public void onEditClick(int position) {
+        toast(list.get(position).fullTitle() + " EDIT");
+    }
+
+    @Override
+    public void onViewClick(int position) {
+        toast(list.get(position).fullTitle() + " VIEW");
     }
 
 

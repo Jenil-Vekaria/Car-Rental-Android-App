@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.carrentalapp.Database.BookingDao;
@@ -19,6 +20,7 @@ import com.example.carrentalapp.Model.Customer;
 import com.example.carrentalapp.Model.Insurance;
 import com.example.carrentalapp.Model.Vehicle;
 import com.example.carrentalapp.R;
+import com.squareup.picasso.Picasso;
 
 import java.time.temporal.ChronoUnit;
 import java.util.Calendar;
@@ -45,6 +47,9 @@ public class ViewBookingActivity extends AppCompatActivity {
     private Insurance chosenInsurance;
     //VEHICLE
     private Vehicle vehicle;
+
+    //VEHICLE IMAGEVIEW
+    private ImageView vehicleImage;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -101,6 +106,10 @@ public class ViewBookingActivity extends AppCompatActivity {
         vehicle = vehicleDao.findVehicle(booking.getVehicleID());
 
         bookingID = findViewById(R.id.bookingID);
+
+        //LOAD THE VEHICLE IMAGE
+        vehicleImage = findViewById(R.id.vehicleImage);
+        Picasso.get().load(vehicle.getVehicleImageURL()).into(vehicleImage);
     }
 
     private void listenHandler() {

@@ -4,6 +4,7 @@ import androidx.room.Dao;
 import androidx.room.Delete;
 import androidx.room.Insert;
 import androidx.room.Query;
+import androidx.room.Update;
 
 import com.example.carrentalapp.Model.Customer;
 
@@ -39,5 +40,8 @@ public interface CustomerDao {
 
     @Insert
     void insert(Customer customer);
+
+    @Update
+    void update(Customer customer);
 
 }
