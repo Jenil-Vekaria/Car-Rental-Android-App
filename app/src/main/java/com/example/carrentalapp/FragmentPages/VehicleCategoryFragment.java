@@ -116,7 +116,7 @@ public class VehicleCategoryFragment extends Fragment implements VehicleCategory
 
     @Override
     public void onViewClick(int position) {
-        toast(list.get(position).getCategory() + " View");
+        onCategoryClick(position);
     }
 
 }
