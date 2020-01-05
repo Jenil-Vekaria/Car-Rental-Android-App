@@ -1,5 +1,5 @@
 # Car-Rental-Mobile-App
-Android mobile app which simulates Car Rental
+Android mobile app which simulates Car Rental<br>
 **Software:** Android Studio, Adobe XD<br>
 **Language:** Java<br>
 **Designed By:** Jenil Vekaria
