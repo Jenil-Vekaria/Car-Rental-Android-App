@@ -20,7 +20,7 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:orientation="vertical"
             >
 
@@ -36,9 +36,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="4dp"
-                    android:layout_marginLeft="4dp"
                     android:layout_marginTop="64dp"
-                    android:text="First Name *"
+                    android:text="@string/first_name"
                     android:textColor="@color/colorSecondary"
                     app:layout_constraintStart_toStartOf="@+id/firstName"
                     app:layout_constraintTop_toBottomOf="@+id/rent_A_Car" />
@@ -58,14 +57,15 @@
                     android:textSize="14sp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/firstNameText" />
+                    app:layout_constraintTop_toBottomOf="@+id/firstNameText"
+                    android:importantForAutofill="no" />
 
                 <TextView
                     android:id="@+id/middleNameText"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
-                    android:text="Middle Name"
+                    android:text="@string/middle_name"
                     android:textColor="@color/colorSecondary"
                     app:layout_constraintStart_toStartOf="@+id/firstNameText"
                     app:layout_constraintTop_toBottomOf="@+id/firstName" />
@@ -81,14 +81,15 @@
                     android:textSize="14sp"
                     app:layout_constraintEnd_toEndOf="@+id/firstName"
                     app:layout_constraintStart_toStartOf="@+id/firstName"
-                    app:layout_constraintTop_toBottomOf="@+id/middleNameText" />
+                    app:layout_constraintTop_toBottomOf="@+id/middleNameText"
+                    android:importantForAutofill="no" />
 
                 <TextView
                     android:id="@+id/lastNameText"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
-                    android:text="Last Name *"
+                    android:text="@string/last_name"
                     android:textColor="@color/colorSecondary"
                     app:layout_constraintStart_toStartOf="@+id/middleNameText"
                     app:layout_constraintTop_toBottomOf="@+id/middleName" />
@@ -104,14 +105,15 @@
                     android:textSize="14sp"
                     app:layout_constraintEnd_toEndOf="@+id/middleName"
                     app:layout_constraintStart_toStartOf="@+id/middleName"
-                    app:layout_constraintTop_toBottomOf="@+id/lastNameText" />
+                    app:layout_constraintTop_toBottomOf="@+id/lastNameText"
+                    android:importantForAutofill="no" />
 
                 <TextView
                     android:id="@+id/emailText"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
-                    android:text="Email"
+                    android:text="@string/email"
                     android:textColor="@color/colorSecondary"
                     app:layout_constraintStart_toStartOf="@+id/lastNameText"
                     app:layout_constraintTop_toBottomOf="@+id/lastName" />
@@ -127,14 +129,15 @@
                     android:textSize="14sp"
                     app:layout_constraintEnd_toEndOf="@+id/lastName"
                     app:layout_constraintStart_toStartOf="@+id/lastName"
-                    app:layout_constraintTop_toBottomOf="@+id/emailText" />
+                    app:layout_constraintTop_toBottomOf="@+id/emailText"
+                    android:importantForAutofill="no" />
 
                 <TextView
                     android:id="@+id/licenseText"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
-                    android:text="Driver License *"
+                    android:text="@string/driver_license"
                     android:textColor="@color/colorSecondary"
                     app:layout_constraintStart_toStartOf="@+id/emailText"
                     app:layout_constraintTop_toBottomOf="@+id/email" />
@@ -150,14 +153,15 @@
                     android:textSize="14sp"
                     app:layout_constraintEnd_toEndOf="@+id/email"
                     app:layout_constraintStart_toStartOf="@+id/email"
-                    app:layout_constraintTop_toBottomOf="@+id/licenseText" />
+                    app:layout_constraintTop_toBottomOf="@+id/licenseText"
+                    android:importantForAutofill="no" />
 
                 <TextView
                     android:id="@+id/expiryText"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
-                    android:text="Expiry Date *"
+                    android:text="@string/expiry_date"
                     android:textColor="@color/colorSecondary"
                     app:layout_constraintStart_toStartOf="@+id/licenseText"
                     app:layout_constraintTop_toBottomOf="@+id/license" />
@@ -169,7 +173,8 @@
                     android:backgroundTint="@color/colorSecondary"
                     android:ems="10"
                     android:enabled="false"
-                    android:inputType="textPersonName"
+                    android:importantForAutofill="no"
+                    android:inputType="date|textPersonName"
                     android:textColor="@android:color/white"
                     android:textSize="14sp"
                     app:layout_constraintEnd_toEndOf="@+id/license"
@@ -181,7 +186,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="4dp"
-                    android:text="YYYY-MM-DD"
+                    android:text="@string/date_format"
                     android:textColor="@android:color/white"
                     app:layout_constraintBottom_toBottomOf="@+id/expiry_date_underline"
                     app:layout_constraintStart_toStartOf="@+id/expiry_date_underline"
@@ -192,7 +197,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
-                    android:text="Date of Birth *"
+                    android:text="@string/date_of_birth"
                     android:textColor="@color/colorSecondary"
                     app:layout_constraintStart_toStartOf="@+id/expiryText"
                     app:layout_constraintTop_toBottomOf="@+id/expiry_date_underline" />
@@ -210,14 +215,15 @@
                     app:layout_constraintEnd_toEndOf="@+id/expiry_date_underline"
                     app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toStartOf="@+id/expiry_date_underline"
-                    app:layout_constraintTop_toBottomOf="@+id/dobText" />
+                    app:layout_constraintTop_toBottomOf="@+id/dobText"
+                    android:importantForAutofill="no" />
 
                 <TextView
                     android:id="@+id/dob"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="4dp"
-                    android:text="YYYY-MM-DD"
+                    android:text="@string/date_format"
                     android:textColor="@android:color/white"
                     app:layout_constraintBottom_toBottomOf="@+id/dob_field_underline"
                     app:layout_constraintStart_toStartOf="@+id/dob_field_underline"
@@ -228,7 +234,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
-                    android:text="Phone Number *"
+                    android:text="@string/phone_number"
                     android:textColor="@color/colorSecondary"
                     app:layout_constraintStart_toStartOf="@+id/dobText"
                     app:layout_constraintTop_toBottomOf="@+id/dob_field_underline" />
@@ -244,14 +250,15 @@
                     android:textSize="14sp"
                     app:layout_constraintEnd_toEndOf="@+id/dob_field_underline"
                     app:layout_constraintStart_toStartOf="@+id/dob_field_underline"
-                    app:layout_constraintTop_toBottomOf="@+id/phoneNoText" />
+                    app:layout_constraintTop_toBottomOf="@+id/phoneNoText"
+                    android:importantForAutofill="no" />
 
                 <TextView
                     android:id="@+id/streetText"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
-                    android:text="Street *"
+                    android:text="@string/street"
                     android:textColor="@color/colorSecondary"
                     app:layout_constraintStart_toStartOf="@+id/phoneNoText"
                     app:layout_constraintTop_toBottomOf="@+id/phoneNumber" />
@@ -267,14 +274,15 @@
                     android:textSize="14sp"
                     app:layout_constraintEnd_toEndOf="@+id/phoneNumber"
                     app:layout_constraintStart_toStartOf="@+id/phoneNumber"
-                    app:layout_constraintTop_toBottomOf="@+id/streetText" />
+                    app:layout_constraintTop_toBottomOf="@+id/streetText"
+                    android:importantForAutofill="no" />
 
                 <TextView
                     android:id="@+id/cityText"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
-                    android:text="City *"
+                    android:text="@string/city"
                     android:textColor="@color/colorSecondary"
                     app:layout_constraintStart_toStartOf="@+id/streetText"
                     app:layout_constraintTop_toBottomOf="@+id/street" />
@@ -290,14 +298,15 @@
                     android:textSize="14sp"
                     app:layout_constraintEnd_toEndOf="@+id/street"
                     app:layout_constraintStart_toStartOf="@+id/street"
-                    app:layout_constraintTop_toBottomOf="@+id/cityText" />
+                    app:layout_constraintTop_toBottomOf="@+id/cityText"
+                    android:importantForAutofill="no" />
 
                 <TextView
                     android:id="@+id/postalCodeText"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
-                    android:text="Postal Code *"
+                    android:text="@string/postal_code"
                     android:textColor="@color/colorSecondary"
                     app:layout_constraintStart_toStartOf="@+id/cityText"
                     app:layout_constraintTop_toBottomOf="@+id/city" />
@@ -313,14 +322,15 @@
                     android:textSize="14sp"
                     app:layout_constraintEnd_toEndOf="@+id/city"
                     app:layout_constraintStart_toStartOf="@+id/city"
-                    app:layout_constraintTop_toBottomOf="@+id/postalCodeText" />
+                    app:layout_constraintTop_toBottomOf="@+id/postalCodeText"
+                    android:importantForAutofill="no" />
 
                 <TextView
                     android:id="@+id/passwordText"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
-                    android:text="Password *"
+                    android:text="@string/password_important"
                     android:textColor="@color/colorSecondary"
                     app:layout_constraintStart_toStartOf="@+id/postalCodeText"
                     app:layout_constraintTop_toBottomOf="@+id/postalCode" />
@@ -337,14 +347,15 @@
                     app:layout_constraintEnd_toEndOf="@+id/postalCode"
                     app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toStartOf="@+id/postalCode"
-                    app:layout_constraintTop_toBottomOf="@+id/passwordText" />
+                    app:layout_constraintTop_toBottomOf="@+id/passwordText"
+                    android:importantForAutofill="no" />
 
                 <TextView
                     android:id="@+id/confirmPasswordText"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
-                    android:text="Confirm Password *"
+                    android:text="@string/confirm_password"
                     android:textColor="@color/colorSecondary"
                     app:layout_constraintStart_toStartOf="@+id/passwordText"
                     app:layout_constraintTop_toBottomOf="@+id/password" />
@@ -361,7 +372,8 @@
                     app:layout_constraintEnd_toEndOf="@+id/password"
                     app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toStartOf="@+id/password"
-                    app:layout_constraintTop_toBottomOf="@+id/confirmPasswordText" />
+                    app:layout_constraintTop_toBottomOf="@+id/confirmPasswordText"
+                    android:importantForAutofill="no" />
 
                 <Button
                     android:id="@+id/register"
@@ -369,7 +381,7 @@
                     android:layout_height="@dimen/buttonSize"
                     android:layout_marginTop="20dp"
                     android:background="@drawable/round_button"
-                    android:text="Register"
+                    android:text="@string/register"
                     android:textColor="@android:color/white"
                     android:textSize="18sp"
                     app:fontFamily="@font/roboto_medium"
@@ -383,10 +395,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="8dp"
-                    android:layout_marginLeft="8dp"
                     android:layout_marginTop="128dp"
                     android:layout_marginBottom="16dp"
-                    android:text="Already a member?"
+                    android:text="@string/already_a_member"
                     android:textColor="@android:color/white"
                     app:fontFamily="@font/roboto"
                     app:layout_constraintBottom_toBottomOf="parent"
@@ -399,8 +410,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="128dp"
                     android:layout_marginEnd="8dp"
-                    android:layout_marginRight="8dp"
-                    android:text="Registration"
+                    android:text="@string/registration"
                     android:textColor="@color/colorSecondary"
                     android:textSize="30sp"
                     android:textStyle="bold"
@@ -418,7 +428,7 @@
                     android:layout_marginLeft="8dp"
                     android:layout_marginEnd="8dp"
                     android:layout_marginRight="8dp"
-                    android:text="Rent-A-Car"
+                    android:text="@string/rent_a_car"
                     android:textColor="@color/colorSecondary"
                     android:textSize="40sp"
                     android:textStyle="bold"
@@ -433,8 +443,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="8dp"
-                    android:layout_marginLeft="8dp"
-                    android:text="Login"
+                    android:text="@string/login"
                     android:textColor="@color/colorSecondary"
                     app:fontFamily="@font/roboto_bold"
                     app:layout_constraintBottom_toBottomOf="@+id/a_member"

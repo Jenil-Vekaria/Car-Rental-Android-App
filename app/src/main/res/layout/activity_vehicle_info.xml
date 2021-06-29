@@ -13,7 +13,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/roboto_medium"
-        android:text="Year Manufacturer Model"
+        android:text="@string/year_manufacturer_model"
         android:textColor="@color/white"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="@+id/back"
@@ -43,7 +43,7 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:orientation="vertical">
 
             <androidx.constraintlayout.widget.ConstraintLayout
@@ -55,6 +55,7 @@
                     android:layout_width="0dp"
                     android:layout_height="240dp"
                     android:layout_marginTop="24dp"
+                    android:contentDescription="@string/todo"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -67,7 +68,7 @@
                     android:backgroundTint="#3803A9F4"
                     android:fontFamily="@font/roboto_medium"
                     android:padding="15dp"
-                    android:text="$50/Day"
+                    android:text="@string/dummy_rate"
                     android:textColor="@color/colorSecondary"
                     android:textSize="24sp"
                     app:layout_constraintEnd_toEndOf="@+id/vehicleSpecCard"
@@ -87,6 +88,7 @@
                         android:layout_width="25dp"
                         android:layout_height="25dp"
                         android:layout_marginStart="16dp"
+                        android:contentDescription="@string/todo"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent"
                         app:srcCompat="@drawable/ic_x_icon" />
@@ -97,7 +99,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="8dp"
                         android:fontFamily="@font/roboto_medium"
-                        android:text="Not Available"
+                        android:text="@string/not_available"
                         android:textColor="#E90202"
                         android:textSize="18sp"
                         app:layout_constraintBottom_toBottomOf="@+id/imageView"
@@ -120,6 +122,7 @@
                         android:layout_width="25dp"
                         android:layout_height="25dp"
                         android:layout_marginStart="16dp"
+                        android:contentDescription="@string/todo"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent"
@@ -131,7 +134,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="8dp"
                         android:fontFamily="@font/roboto_medium"
-                        android:text="Available"
+                        android:text="@string/available"
                         android:textColor="#3CFF00"
                         android:textSize="18sp"
                         app:layout_constraintBottom_toBottomOf="parent"
@@ -175,7 +178,7 @@
                             android:layout_marginStart="24dp"
                             android:layout_marginTop="4dp"
                             android:fontFamily="@font/roboto_medium"
-                            android:text="Vehicle Specs"
+                            android:text="@string/vehicle_specs"
                             android:textColor="@color/colorPrimary"
                             android:textSize="18sp"
                             app:layout_constraintStart_toStartOf="parent"
@@ -187,7 +190,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginTop="16dp"
                             android:fontFamily="@font/roboto_medium"
-                            android:text="Year"
+                            android:text="@string/year"
                             app:layout_constraintStart_toStartOf="@+id/vehicleSpecsText"
                             app:layout_constraintTop_toBottomOf="@+id/vehicleSpecsText" />
 
@@ -196,7 +199,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/roboto_medium"
-                            android:text="Type"
+                            android:text="@string/type"
                             app:layout_constraintBottom_toBottomOf="@+id/seatsText"
                             app:layout_constraintStart_toStartOf="@+id/modelText"
                             app:layout_constraintTop_toTopOf="@+id/seatsText" />
@@ -206,7 +209,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/roboto_medium"
-                            android:text="Seats"
+                            android:text="@string/seats"
                             app:layout_constraintBottom_toBottomOf="@+id/mileageText"
                             app:layout_constraintStart_toStartOf="@+id/manufacturerText"
                             app:layout_constraintTop_toTopOf="@+id/mileageText" />
@@ -217,7 +220,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginTop="32dp"
                             android:fontFamily="@font/roboto_medium"
-                            android:text="Mileage"
+                            android:text="@string/mileage"
                             app:layout_constraintStart_toStartOf="@+id/vehicleSpecsText"
                             app:layout_constraintTop_toBottomOf="@+id/yearText" />
 
@@ -227,7 +230,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginEnd="24dp"
                             android:fontFamily="@font/roboto_medium"
-                            android:text="Model"
+                            android:text="@string/model"
                             app:layout_constraintBottom_toBottomOf="@+id/manufacturerText"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintTop_toTopOf="@+id/manufacturerText" />
@@ -237,7 +240,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/roboto_medium"
-                            android:text="Manufacturer"
+                            android:text="@string/manufacturer"
                             app:layout_constraintBottom_toBottomOf="@+id/yearText"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
@@ -249,7 +252,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginTop="8dp"
                             android:fontFamily="@font/roboto"
-                            android:text="Year"
+                            android:text="@string/year"
                             android:textColor="@color/colorPrimary"
                             app:layout_constraintStart_toStartOf="@+id/yearText"
                             app:layout_constraintTop_toBottomOf="@+id/yearText" />
@@ -260,7 +263,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginTop="8dp"
                             android:fontFamily="@font/roboto"
-                            android:text="Type"
+                            android:text="@string/type"
                             android:textColor="@color/colorPrimary"
                             app:layout_constraintStart_toStartOf="@+id/typeText"
                             app:layout_constraintTop_toBottomOf="@+id/typeText" />
@@ -271,7 +274,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginTop="8dp"
                             android:fontFamily="@font/roboto"
-                            android:text="Seats"
+                            android:text="@string/seats"
                             android:textColor="@color/colorPrimary"
                             app:layout_constraintStart_toStartOf="@+id/seatsText"
                             app:layout_constraintTop_toBottomOf="@+id/seatsText" />
@@ -282,7 +285,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginTop="8dp"
                             android:fontFamily="@font/roboto"
-                            android:text="Mileage"
+                            android:text="@string/mileage"
                             android:textColor="@color/colorPrimary"
                             app:layout_constraintStart_toStartOf="@+id/mileageText"
                             app:layout_constraintTop_toBottomOf="@+id/mileageText" />
@@ -293,7 +296,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginTop="8dp"
                             android:fontFamily="@font/roboto"
-                            android:text="Model"
+                            android:text="@string/model"
                             android:textColor="@color/colorPrimary"
                             app:layout_constraintStart_toStartOf="@+id/modelText"
                             app:layout_constraintTop_toBottomOf="@+id/modelText" />
@@ -304,7 +307,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginTop="8dp"
                             android:fontFamily="@font/roboto"
-                            android:text="Manufacturer"
+                            android:text="@string/manufacturer"
                             android:textColor="@color/colorPrimary"
                             app:layout_constraintStart_toStartOf="@+id/manufacturerText"
                             app:layout_constraintTop_toBottomOf="@+id/manufacturerText" />
@@ -346,7 +349,7 @@
                             android:layout_marginStart="24dp"
                             android:layout_marginTop="4dp"
                             android:fontFamily="@font/roboto_medium"
-                            android:text="Insurance"
+                            android:text="@string/insurance"
                             android:textColor="@color/colorPrimary"
                             android:textSize="18sp"
                             app:layout_constraintStart_toStartOf="parent"
@@ -368,7 +371,7 @@
                                 android:layout_height="20dp"
                                 android:buttonTint="@color/colorSecondary"
                                 android:checked="true"
-                                android:text="None" />
+                                android:text="@string/none" />
 
                             <LinearLayout
                                 android:id="@+id/insurance_none"
@@ -383,7 +386,8 @@
                                     android:layout_marginBottom="5dp"
                                     android:fontFamily="@font/roboto"
                                     android:paddingLeft="30dp"
-                                    android:text="$0"
+                                    android:paddingRight="30dp"
+                                    android:text="@string/dummy_basic_rate"
                                     android:textSize="12sp" />
 
                                 <LinearLayout
@@ -397,12 +401,14 @@
                                         android:layout_marginBottom="5dp"
                                         android:gravity="center_vertical"
                                         android:orientation="horizontal"
-                                        android:paddingLeft="30dp">
+                                        android:paddingStart="30dp"
+                                        android:paddingEnd="30dp">
 
                                         <ImageView
                                             android:id="@+id/imageView2"
                                             android:layout_width="16dp"
                                             android:layout_height="16dp"
+                                            android:contentDescription="@string/todo"
                                             app:srcCompat="@drawable/ic_x_icon" />
 
                                         <TextView
@@ -413,7 +419,7 @@
                                             android:fontFamily="@font/roboto"
                                             android:paddingLeft="5dp"
                                             android:paddingRight="5dp"
-                                            android:text="Collision Damage Waiver"
+                                            android:text="@string/collision_damage_waiver"
                                             android:textColor="@color/colorPrimary"
                                             android:textSize="12sp" />
 
@@ -421,6 +427,7 @@
                                             android:id="@+id/imageView3"
                                             android:layout_width="16dp"
                                             android:layout_height="16dp"
+                                            android:contentDescription="@string/todo"
                                             app:srcCompat="@drawable/ic_x_icon" />
 
                                         <TextView
@@ -430,7 +437,8 @@
                                             android:layout_weight="1"
                                             android:fontFamily="@font/roboto"
                                             android:paddingLeft="5dp"
-                                            android:text="Supplemental Liability Protection"
+                                            android:paddingRight="5dp"
+                                            android:text="@string/supplemental_liability_protection"
                                             android:textColor="@color/colorPrimary"
                                             android:textSize="12sp" />
                                     </LinearLayout>
@@ -441,12 +449,14 @@
                                         android:layout_marginBottom="5dp"
                                         android:gravity="center_vertical"
                                         android:orientation="horizontal"
-                                        android:paddingLeft="30dp">
+                                        android:paddingLeft="30dp"
+                                        android:paddingRight="30dp">
 
                                         <ImageView
                                             android:id="@+id/imageView4"
                                             android:layout_width="16dp"
                                             android:layout_height="16dp"
+                                            android:contentDescription="@string/todo"
                                             app:srcCompat="@drawable/ic_x_icon" />
 
                                         <TextView
@@ -455,8 +465,9 @@
                                             android:layout_height="wrap_content"
                                             android:layout_weight="1"
                                             android:fontFamily="@font/roboto"
-                                            android:paddingLeft="5dp"
-                                            android:text="Personal Accident Insurance"
+                                            android:paddingStart="5dp"
+                                            android:paddingEnd="5dp"
+                                            android:text="@string/personal_accident_insurance"
                                             android:textColor="@color/colorPrimary"
                                             android:textSize="12sp" />
 
@@ -464,6 +475,7 @@
                                             android:id="@+id/imageView5"
                                             android:layout_width="16dp"
                                             android:layout_height="16dp"
+                                            android:contentDescription="@string/todo"
                                             app:srcCompat="@drawable/ic_x_icon" />
 
                                         <TextView
@@ -473,7 +485,8 @@
                                             android:layout_weight="1"
                                             android:fontFamily="@font/roboto"
                                             android:paddingLeft="5dp"
-                                            android:text="Personal Effects Coverage"
+                                            android:paddingRight="5dp"
+                                            android:text="@string/personal_effects_coverage"
                                             android:textColor="@color/colorPrimary"
                                             android:textSize="12sp" />
                                     </LinearLayout>
@@ -486,7 +499,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="20dp"
                                 android:buttonTint="@color/colorSecondary"
-                                android:text="Basic" />
+                                android:text="@string/basic" />
 
                             <LinearLayout
                                 android:id="@+id/insurance_basic"
@@ -501,7 +514,8 @@
                                     android:layout_marginBottom="5dp"
                                     android:fontFamily="@font/roboto"
                                     android:paddingLeft="30dp"
-                                    android:text="$15"
+                                    android:paddingRight="30dp"
+                                    android:text="@string/dummy_gold_rate"
                                     android:textSize="12sp" />
 
                                 <LinearLayout
@@ -515,12 +529,14 @@
                                         android:layout_marginBottom="5dp"
                                         android:gravity="center_vertical"
                                         android:orientation="horizontal"
-                                        android:paddingLeft="30dp">
+                                        android:paddingStart="30dp"
+                                        android:paddingEnd="30dp">
 
                                         <ImageView
                                             android:id="@+id/imageView6"
                                             android:layout_width="16dp"
                                             android:layout_height="16dp"
+                                            android:contentDescription="@string/todo"
                                             app:srcCompat="@drawable/path" />
 
                                         <TextView
@@ -531,7 +547,7 @@
                                             android:fontFamily="@font/roboto"
                                             android:paddingLeft="5dp"
                                             android:paddingRight="5dp"
-                                            android:text="Collision Damage Waiver"
+                                            android:text="@string/collision_damage_waiver"
                                             android:textColor="@color/colorPrimary"
                                             android:textSize="12sp" />
 
@@ -539,6 +555,7 @@
                                             android:id="@+id/imageView7"
                                             android:layout_width="16dp"
                                             android:layout_height="16dp"
+                                            android:contentDescription="@string/todo"
                                             app:srcCompat="@drawable/path" />
 
                                         <TextView
@@ -547,8 +564,9 @@
                                             android:layout_height="wrap_content"
                                             android:layout_weight="1"
                                             android:fontFamily="@font/roboto"
-                                            android:paddingLeft="5dp"
-                                            android:text="Supplemental Liability Protection"
+                                            android:paddingStart="5dp"
+                                            android:paddingEnd="5dp"
+                                            android:text="@string/supplemental_liability_protection"
                                             android:textColor="@color/colorPrimary"
                                             android:textSize="12sp" />
                                     </LinearLayout>
@@ -559,12 +577,14 @@
                                         android:layout_marginBottom="5dp"
                                         android:gravity="center_vertical"
                                         android:orientation="horizontal"
-                                        android:paddingLeft="30dp">
+                                        android:paddingStart="30dp"
+                                        android:paddingEnd="30dp">
 
                                         <ImageView
                                             android:id="@+id/imageView8"
                                             android:layout_width="16dp"
                                             android:layout_height="16dp"
+                                            android:contentDescription="@string/todo"
                                             app:srcCompat="@drawable/ic_x_icon" />
 
                                         <TextView
@@ -574,7 +594,8 @@
                                             android:layout_weight="1"
                                             android:fontFamily="@font/roboto"
                                             android:paddingLeft="5dp"
-                                            android:text="Personal Accident Insurance"
+                                            android:paddingRight="5dp"
+                                            android:text="@string/personal_accident_insurance"
                                             android:textColor="@color/colorPrimary"
                                             android:textSize="12sp" />
 
@@ -582,6 +603,7 @@
                                             android:id="@+id/imageView9"
                                             android:layout_width="16dp"
                                             android:layout_height="16dp"
+                                            android:contentDescription="@string/todo"
                                             app:srcCompat="@drawable/ic_x_icon" />
 
                                         <TextView
@@ -591,7 +613,8 @@
                                             android:layout_weight="1"
                                             android:fontFamily="@font/roboto"
                                             android:paddingLeft="5dp"
-                                            android:text="Personal Effects Coverage"
+                                            android:paddingRight="5dp"
+                                            android:text="@string/personal_effects_coverage"
                                             android:textColor="@color/colorPrimary"
                                             android:textSize="12sp" />
                                     </LinearLayout>
@@ -604,7 +627,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="20dp"
                                 android:buttonTint="@color/colorSecondary"
-                                android:text="Premium" />
+                                android:text="@string/premium" />
 
 
                             <LinearLayout
@@ -619,8 +642,9 @@
                                     android:layout_height="wrap_content"
                                     android:layout_marginBottom="5dp"
                                     android:fontFamily="@font/roboto"
-                                    android:paddingLeft="30dp"
-                                    android:text="$25"
+                                    android:paddingStart="30dp"
+                                    android:paddingEnd="30dp"
+                                    android:text="@string/dummy_platinum_rate"
                                     android:textSize="12sp" />
 
                                 <LinearLayout
@@ -634,12 +658,14 @@
                                         android:layout_marginBottom="5dp"
                                         android:gravity="center_vertical"
                                         android:orientation="horizontal"
-                                        android:paddingLeft="30dp">
+                                        android:paddingLeft="30dp"
+                                        android:paddingRight="30dp">
 
                                         <ImageView
                                             android:id="@+id/imageView10"
                                             android:layout_width="16dp"
                                             android:layout_height="16dp"
+                                            android:contentDescription="@string/todo"
                                             app:srcCompat="@drawable/path" />
 
                                         <TextView
@@ -650,7 +676,7 @@
                                             android:fontFamily="@font/roboto"
                                             android:paddingLeft="5dp"
                                             android:paddingRight="5dp"
-                                            android:text="Collision Damage Waiver"
+                                            android:text="@string/collision_damage_waiver"
                                             android:textColor="@color/colorPrimary"
                                             android:textSize="12sp" />
 
@@ -658,6 +684,7 @@
                                             android:id="@+id/imageView11"
                                             android:layout_width="16dp"
                                             android:layout_height="16dp"
+                                            android:contentDescription="@string/todo"
                                             app:srcCompat="@drawable/path" />
 
                                         <TextView
@@ -667,7 +694,8 @@
                                             android:layout_weight="1"
                                             android:fontFamily="@font/roboto"
                                             android:paddingLeft="5dp"
-                                            android:text="Supplemental Liability Protection"
+                                            android:paddingRight="5dp"
+                                            android:text="@string/supplemental_liability_protection"
                                             android:textColor="@color/colorPrimary"
                                             android:textSize="12sp" />
                                     </LinearLayout>
@@ -678,12 +706,14 @@
                                         android:layout_marginBottom="5dp"
                                         android:gravity="center_vertical"
                                         android:orientation="horizontal"
-                                        android:paddingLeft="30dp">
+                                        android:paddingLeft="30dp"
+                                        android:paddingRight="30dp">
 
                                         <ImageView
                                             android:id="@+id/imageView12"
                                             android:layout_width="16dp"
                                             android:layout_height="16dp"
+                                            android:contentDescription="@string/todo"
                                             app:srcCompat="@drawable/path" />
 
                                         <TextView
@@ -693,7 +723,8 @@
                                             android:layout_weight="1"
                                             android:fontFamily="@font/roboto"
                                             android:paddingLeft="5dp"
-                                            android:text="Personal Accident Insurance"
+                                            android:paddingRight="5dp"
+                                            android:text="@string/personal_accident_insurance"
                                             android:textColor="@color/colorPrimary"
                                             android:textSize="12sp" />
 
@@ -701,6 +732,7 @@
                                             android:id="@+id/imageView13"
                                             android:layout_width="16dp"
                                             android:layout_height="16dp"
+                                            android:contentDescription="@string/todo"
                                             app:srcCompat="@drawable/path" />
 
                                         <TextView
@@ -709,8 +741,9 @@
                                             android:layout_height="wrap_content"
                                             android:layout_weight="1"
                                             android:fontFamily="@font/roboto"
-                                            android:paddingLeft="5dp"
-                                            android:text="Personal Effects Coverage"
+                                            android:paddingStart="5dp"
+                                            android:paddingEnd="5dp"
+                                            android:text="@string/personal_effects_coverage"
                                             android:textColor="@color/colorPrimary"
                                             android:textSize="12sp" />
                                     </LinearLayout>
@@ -731,7 +764,7 @@
                     android:layout_marginBottom="16dp"
                     android:background="@drawable/round_button"
                     android:fontFamily="@font/roboto_medium"
-                    android:text="Book This Car"
+                    android:text="@string/book_this_car"
                     android:textColor="@color/white"
                     android:textSize="18sp"
                     app:layout_constraintBottom_toBottomOf="parent"

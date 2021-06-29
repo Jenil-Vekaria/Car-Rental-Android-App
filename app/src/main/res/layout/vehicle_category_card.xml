@@ -34,7 +34,7 @@
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="8dp"
                 android:fontFamily="@font/roboto_bold"
-                android:text="Vehicle Category"
+                android:text="@string/vehicle_category"
                 android:textColor="@color/statusBarColor"
                 android:textSize="24sp"
                 android:textStyle="bold"
@@ -47,7 +47,7 @@
                 android:layout_height="36dp"
                 android:background="@drawable/select_button"
                 android:fontFamily="@font/roboto_light"
-                android:text="Select"
+                android:text="@string/select"
                 android:textSize="18sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent" />
@@ -58,7 +58,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:fontFamily="@font/roboto_light"
-                android:text="Total: 20"
+                android:text="@string/total_20_label"
                 android:textColor="@android:color/background_light"
                 android:textSize="18sp"
                 app:layout_constraintBottom_toBottomOf="@+id/select"
@@ -72,7 +72,8 @@
                 app:layout_constraintBottom_toTopOf="@+id/select"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/vehicleCategory" />
+                app:layout_constraintTop_toBottomOf="@+id/vehicleCategory"
+                android:contentDescription="@string/todo" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>

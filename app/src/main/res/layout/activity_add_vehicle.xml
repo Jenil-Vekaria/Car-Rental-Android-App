@@ -29,7 +29,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="56dp"
-                    android:text="Add Vehicle "
+                    android:text="@string/add_vehicle"
                     android:textColor="@color/colorSecondary"
                     android:textSize="30sp"
                     android:textStyle="bold"
@@ -45,7 +45,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="4dp"
                     android:layout_marginTop="16dp"
-                    android:text="Category"
+                    android:text="@string/category"
                     android:textColor="@color/colorSecondary"
                     app:layout_constraintStart_toStartOf="@+id/category"
                     app:layout_constraintTop_toBottomOf="@+id/welcome_to_title" />
@@ -70,7 +70,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
-                    android:text="Seats"
+                    android:text="@string/seats"
                     android:textColor="@color/colorSecondary"
                     app:layout_constraintStart_toStartOf="@+id/categoryText"
                     app:layout_constraintTop_toBottomOf="@+id/category" />
@@ -93,7 +93,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
-                    android:text="Price"
+                    android:text="@string/price"
                     android:textColor="@color/colorSecondary"
                     app:layout_constraintStart_toStartOf="@+id/categoryText"
                     app:layout_constraintTop_toBottomOf="@+id/seats" />
@@ -117,7 +117,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
-                    android:text="Mileage"
+                    android:text="@string/mileage"
                     android:textColor="@color/colorSecondary"
                     app:layout_constraintStart_toStartOf="@+id/categoryText"
                     app:layout_constraintTop_toBottomOf="@+id/price" />
@@ -140,7 +140,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
-                    android:text="Manufacturer"
+                    android:text="@string/manufacturer"
                     android:textColor="@color/colorSecondary"
                     app:layout_constraintStart_toStartOf="@+id/mileageText"
                     app:layout_constraintTop_toBottomOf="@+id/mileage" />
@@ -164,7 +164,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
-                    android:text="Model"
+                    android:text="@string/model"
                     android:textColor="@color/colorSecondary"
                     app:layout_constraintStart_toStartOf="@+id/mileageText"
                     app:layout_constraintTop_toBottomOf="@+id/manufacturer" />
@@ -188,7 +188,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
-                    android:text="Year"
+                    android:text="@string/year"
                     android:textColor="@color/colorSecondary"
                     app:layout_constraintStart_toStartOf="@+id/mileageText"
                     app:layout_constraintTop_toBottomOf="@+id/model" />
@@ -212,7 +212,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
-                    android:text="Image URL"
+                    android:text="@string/image_url"
                     android:textColor="@color/colorSecondary"
                     app:layout_constraintStart_toStartOf="@+id/yearText"
                     app:layout_constraintTop_toBottomOf="@+id/year" />
@@ -223,7 +223,7 @@
                     android:layout_height="wrap_content"
                     android:backgroundTint="@color/colorSecondary"
                     android:ems="10"
-                    android:inputType="textPersonName"
+                    android:inputType="textUri|textPersonName"
                     android:textColor="@android:color/white"
                     android:textSize="14sp"
                     app:layout_constraintEnd_toEndOf="@+id/year"
@@ -236,7 +236,7 @@
                     android:layout_height="@dimen/buttonSize"
                     android:layout_marginTop="24dp"
                     android:background="@drawable/round_button"
-                    android:text="Add"
+                    android:text="@string/add"
                     app:layout_constraintEnd_toEndOf="@+id/year"
                     app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toStartOf="@+id/year"
@@ -251,7 +251,7 @@
                     android:backgroundTint="#D50000"
                     android:paddingLeft="10dp"
                     android:paddingRight="10dp"
-                    android:text="Reset"
+                    android:text="@string/reset"
                     app:layout_constraintEnd_toEndOf="@+id/add"
                     app:layout_constraintStart_toStartOf="@+id/add"
                     app:layout_constraintTop_toBottomOf="@+id/add" />
@@ -264,7 +264,7 @@
                     android:background="@drawable/round_card"
                     android:paddingLeft="10dp"
                     android:paddingRight="10dp"
-                    android:text="Add Vehicle Category"
+                    android:text="@string/add_vehicle_category"
                     app:layout_constraintEnd_toEndOf="@+id/reset"
                     app:layout_constraintHorizontal_bias="0.471"
                     app:layout_constraintStart_toStartOf="@+id/reset"
@@ -276,7 +276,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
                     android:buttonTint="@color/colorSecondary"
-                    android:text="Available"
+                    android:text="@string/available"
                     android:textColor="@color/colorSecondary"
                     app:layout_constraintStart_toStartOf="@+id/imageURL"
                     app:layout_constraintTop_toBottomOf="@+id/imageURL" />
@@ -291,7 +291,7 @@
                     android:backgroundTint="#64DD17"
                     android:paddingLeft="10dp"
                     android:paddingRight="10dp"
-                    android:text="View Result"
+                    android:text="@string/view_result"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="@+id/vehicleCategory"
                     app:layout_constraintStart_toStartOf="@+id/vehicleCategory"
@@ -303,6 +303,7 @@
                     android:layout_height="235dp"
                     android:layout_marginTop="24dp"
                     android:background="#FFFFFF"
+                    android:contentDescription="@string/todo"
                     app:layout_constraintEnd_toEndOf="@+id/imageURL"
                     app:layout_constraintStart_toStartOf="@+id/imageURL"
                     app:layout_constraintTop_toBottomOf="@+id/availability" />
@@ -313,7 +314,7 @@
                     android:layout_height="@dimen/buttonSize"
                     android:layout_marginTop="8dp"
                     android:background="@drawable/round_button"
-                    android:text="Load"
+                    android:text="@string/load"
                     app:layout_constraintStart_toStartOf="@+id/viewVehicle"
                     app:layout_constraintTop_toBottomOf="@+id/viewVehicle" />
 

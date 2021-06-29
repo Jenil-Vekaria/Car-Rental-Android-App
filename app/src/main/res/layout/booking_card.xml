@@ -27,9 +27,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/roboto_bold"
-                android:paddingLeft="16dp"
+                android:paddingStart="16dp"
                 android:paddingTop="8dp"
-                android:text="2020 Toyota Avalon"
+                android:paddingEnd="8dp"
+                android:text="@string/dummy_car_title"
                 android:textColor="@color/statusBarColor"
                 android:textSize="20sp" />
 
@@ -39,24 +40,26 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:orientation="horizontal"
-                android:paddingLeft="16dp">
+                android:paddingStart="16dp"
+                android:paddingEnd="8dp">
 
                 <TextView
                     android:id="@+id/bookingIDText"
                     android:layout_width="80dp"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/roboto"
-                    android:text="BookingID:"
+                    android:text="@string/bookingid_label"
                     android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/bookingID"
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:fontFamily="@font/roboto"
-                    android:paddingLeft="15dp"
-                    android:text="1234"
+                    android:paddingStart="15dp"
+                    android:paddingEnd="8dp"
+                    android:text="@string/booking_id_sample"
                     android:textColor="@color/colorPrimary" />
             </LinearLayout>
 
@@ -65,24 +68,26 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                android:paddingLeft="16dp"
-                android:paddingTop="8dp">
+                android:paddingStart="16dp"
+                android:paddingTop="8dp"
+                android:paddingEnd="8dp">
 
                 <TextView
                     android:id="@+id/customerNameText"
                     android:layout_width="80dp"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/roboto"
-                    android:text="Name:" />
+                    android:text="@string/name_label" />
 
                 <TextView
                     android:id="@+id/customerName"
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:fontFamily="@font/roboto"
-                    android:paddingLeft="15dp"
-                    android:text="Mr. Jenil Vekaria"
+                    android:paddingStart="15dp"
+                    android:paddingEnd="8dp"
+                    android:text="@string/dummy_name"
                     android:textColor="@color/colorPrimary" />
             </LinearLayout>
 
@@ -92,24 +97,26 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                android:paddingLeft="16dp"
-                android:paddingTop="8dp">
+                android:paddingStart="16dp"
+                android:paddingTop="8dp"
+                android:paddingEnd="8dp">
 
                 <TextView
                     android:id="@+id/pickupDateText"
                     android:layout_width="80dp"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/roboto"
-                    android:text="Pickup:" />
+                    android:text="@string/pickup_label" />
 
                 <TextView
                     android:id="@+id/pickupDate"
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:fontFamily="@font/roboto"
-                    android:paddingLeft="15dp"
-                    android:text="07:33 p.m January, 1 2020"
+                    android:paddingStart="15dp"
+                    android:paddingEnd="8dp"
+                    android:text="@string/dummy_pickup"
                     android:textColor="@color/colorPrimary" />
             </LinearLayout>
 
@@ -118,24 +125,26 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                android:paddingLeft="16dp"
-                android:paddingTop="8dp">
+                android:paddingStart="16dp"
+                android:paddingTop="8dp"
+                android:paddingEnd="8dp">
 
                 <TextView
                     android:id="@+id/returnDateText"
                     android:layout_width="80dp"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/roboto"
-                    android:text="Return:" />
+                    android:text="@string/return_label" />
 
                 <TextView
                     android:id="@+id/returnDate"
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:fontFamily="@font/roboto"
-                    android:paddingLeft="15dp"
-                    android:text="07:33 p.m January, 10 2020"
+                    android:paddingStart="15dp"
+                    android:paddingEnd="8dp"
+                    android:text="@string/dummy_return_date"
                     android:textColor="@color/colorPrimary" />
             </LinearLayout>
 
@@ -148,12 +157,12 @@
 
                 <TextView
                     android:id="@+id/bookingStatus"
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:fontFamily="@font/roboto_bold"
                     android:gravity="center_horizontal"
-                    android:text="Waiting for approval"
+                    android:text="@string/waiting_for_approval"
                     android:textColor="#FF6D00" />
             </LinearLayout>
 

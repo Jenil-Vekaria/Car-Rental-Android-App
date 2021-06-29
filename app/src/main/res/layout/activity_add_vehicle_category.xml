@@ -26,6 +26,7 @@
                     android:layout_height="235dp"
                     android:layout_marginTop="8dp"
                     android:background="#FFFFFF"
+                    android:contentDescription="@string/image_url"
                     app:layout_constraintEnd_toEndOf="@+id/imageURL"
                     app:layout_constraintHorizontal_bias="0.476"
                     app:layout_constraintStart_toStartOf="@+id/imageURLText"
@@ -44,14 +45,15 @@
                     android:textSize="14sp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/categoryText" />
+                    app:layout_constraintTop_toBottomOf="@+id/categoryText"
+                    android:importantForAutofill="no" />
 
                 <TextView
                     android:id="@+id/welcome_to_title"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="52dp"
-                    android:text="Add Vehicle Category"
+                    android:text="@string/add_vehicle_category"
                     android:textColor="@color/colorSecondary"
                     android:textSize="30sp"
                     android:textStyle="bold"
@@ -66,7 +68,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="4dp"
                     android:layout_marginTop="32dp"
-                    android:text="Category"
+                    android:text="@string/category"
                     android:textColor="@color/colorSecondary"
                     app:layout_constraintStart_toStartOf="@+id/category"
                     app:layout_constraintTop_toBottomOf="@+id/welcome_to_title" />
@@ -76,7 +78,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
-                    android:text="Category ID"
+                    android:text="@string/category_id"
                     android:textColor="@color/colorSecondary"
                     app:layout_constraintStart_toStartOf="@+id/categoryText"
                     app:layout_constraintTop_toBottomOf="@+id/category" />
@@ -87,7 +89,7 @@
                     android:layout_height="@dimen/buttonSize"
                     android:layout_marginTop="8dp"
                     android:background="@drawable/round_button"
-                    android:text="Load"
+                    android:text="@string/load"
                     app:layout_constraintStart_toStartOf="@+id/imageURL"
                     app:layout_constraintTop_toBottomOf="@+id/viewImage" />
 
@@ -96,7 +98,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
-                    android:text="Select Color"
+                    android:text="@string/select_color"
                     android:textColor="@color/colorSecondary"
                     app:layout_constraintBottom_toBottomOf="@+id/colorDisplay"
                     app:layout_constraintStart_toEndOf="@+id/colorDisplay"
@@ -108,12 +110,13 @@
                     android:layout_height="wrap_content"
                     android:backgroundTint="@color/colorSecondary"
                     android:ems="10"
-                    android:inputType="textPersonName"
+                    android:inputType="textUri|textPersonName"
                     android:textColor="@android:color/white"
                     android:textSize="14sp"
                     app:layout_constraintEnd_toEndOf="@+id/categoryID"
                     app:layout_constraintStart_toStartOf="@+id/categoryID"
-                    app:layout_constraintTop_toBottomOf="@+id/imageURLText" />
+                    app:layout_constraintTop_toBottomOf="@+id/imageURLText"
+                    android:importantForAutofill="no" />
 
                 <Button
                     android:id="@+id/add"
@@ -121,7 +124,7 @@
                     android:layout_height="@dimen/buttonSize"
                     android:layout_marginTop="24dp"
                     android:background="@drawable/round_button"
-                    android:text="Add"
+                    android:text="@string/add"
                     app:layout_constraintEnd_toEndOf="@+id/imageURL"
                     app:layout_constraintStart_toStartOf="@+id/imageURL"
                     app:layout_constraintTop_toBottomOf="@+id/colorDisplay" />
@@ -135,7 +138,7 @@
                     android:background="@drawable/round_card"
                     android:paddingLeft="10dp"
                     android:paddingRight="10dp"
-                    android:text="Add Vehicle"
+                    android:text="@string/add_vehicle"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="@+id/reset"
                     app:layout_constraintStart_toStartOf="@+id/reset"
@@ -146,7 +149,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
-                    android:text="Image URL"
+                    android:text="@string/image_url"
                     android:textColor="@color/colorSecondary"
                     app:layout_constraintStart_toStartOf="@+id/categoryIDText"
                     app:layout_constraintTop_toBottomOf="@+id/categoryID" />
@@ -160,7 +163,7 @@
                     android:backgroundTint="#D50000"
                     android:paddingLeft="10dp"
                     android:paddingRight="10dp"
-                    android:text="Reset"
+                    android:text="@string/reset"
                     app:layout_constraintEnd_toEndOf="@+id/add"
                     app:layout_constraintStart_toStartOf="@+id/add"
                     app:layout_constraintTop_toBottomOf="@+id/add" />
@@ -180,7 +183,9 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:backgroundTint="@color/colorSecondary"
+                    android:contentDescription="@string/category_id"
                     android:ems="10"
+                    android:importantForAutofill="no"
                     android:inputType="number"
                     android:textColor="@android:color/white"
                     android:textSize="14sp"
