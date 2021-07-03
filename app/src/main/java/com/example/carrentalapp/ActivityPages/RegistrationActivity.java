@@ -20,6 +20,8 @@ import com.example.carrentalapp.R;
 
 import java.util.Random;
 
+import c.e.c.Utiil.SimpleSHA1;
+
 
 public class RegistrationActivity extends AppCompatActivity{
 
@@ -156,11 +158,17 @@ public class RegistrationActivity extends AppCompatActivity{
 
             //Password and Confirm Password Check
             if(password.length() > 0 && password.equals(confirm_password)) {
+                String pw = "";
+                try{
+                    pw = SimpleSHA1.SHA1(password);
+                } catch (Exception e) {
+                    toast("Internal Server Error");
+                }
 
                 return new Customer(id,firstName, middleName, lastName,
                         email, driverLicense, expiry,
                         dateOfBirth, phoneNumber, street,
-                        city, postalCode, password
+                        city, postalCode, pw
                 );
             }else{
                 toast("Password do not match");
@@ -180,7 +188,7 @@ public class RegistrationActivity extends AppCompatActivity{
     }
 
 
-    //DEBUGING
+    //DEBUGGING
     private void toast(String txt){
         Toast toast = Toast.makeText(getApplicationContext(),txt,Toast.LENGTH_SHORT);
         toast.show();

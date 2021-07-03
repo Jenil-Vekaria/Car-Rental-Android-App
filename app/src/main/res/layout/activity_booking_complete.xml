@@ -42,7 +42,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/roboto_medium"
-                    android:text="@string/bookingid_1234"
+                    android:text="@string/booking_id_dummy"
                     android:textColor="@color/white"
                     android:textSize="12sp"
                     app:layout_constraintEnd_toEndOf="@+id/bookingCompleteText"
@@ -403,7 +403,7 @@
                                     android:fontFamily="@font/roboto"
                                     android:paddingStart="15dp"
                                     android:paddingEnd="15dp"
-                                    android:text="@string/_03_00pm_t_tweb_dec_17"
+                                    android:text="@string/some_date_sample"
                                     android:textColor="@color/colorPrimary" />
                             </LinearLayout>
                         </LinearLayout>

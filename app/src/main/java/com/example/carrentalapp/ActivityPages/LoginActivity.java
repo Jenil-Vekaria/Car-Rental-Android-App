@@ -25,6 +25,8 @@ import com.example.carrentalapp.Model.VehicleCategory;
 import com.example.carrentalapp.R;
 import com.example.carrentalapp.Session.Session;
 
+import c.e.c.Utiil.SimpleSHA1;
+
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -103,7 +105,14 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 CustomerDao customerDao = db.customerDao();
-                Customer check = customerDao.findUser(email.getText().toString(),password.getText().toString());
+
+                String pw = "";
+                try {
+                    pw = SimpleSHA1.SHA1(password.getText().toString());
+                } catch (Exception e) {
+
+                }
+                Customer check = customerDao.findUser(email.getText().toString(),pw);
 
                 if(check != null){
                     Session.save(LoginActivity.this,"customerID",check.getCustomerID()+"");
