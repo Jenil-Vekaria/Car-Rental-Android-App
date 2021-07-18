@@ -70,7 +70,7 @@ public class BookingAdapter extends RecyclerView.Adapter<BookingAdapter.BookingH
     class BookingHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
 
         TextView vehicleName, bookingID, customerName,
-                 pickupDate, returnDate, bookingStatus;
+                 pickupDate, returnDate, bookingStatus, pickupLocation;
         onBookingListener onBookingListener;
 
         public BookingHolder(@NonNull View itemView, onBookingListener onBookingListener) {
@@ -82,6 +82,7 @@ public class BookingAdapter extends RecyclerView.Adapter<BookingAdapter.BookingH
             pickupDate = itemView.findViewById(R.id.pickupDate);
             returnDate = itemView.findViewById(R.id.returnDate);
             bookingStatus = itemView.findViewById(R.id.bookingStatus);
+            pickupLocation = itemView.findViewById(R.id.pickupLocation);
 
             this.onBookingListener = onBookingListener;
             itemView.setOnClickListener(this);

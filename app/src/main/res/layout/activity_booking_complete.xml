@@ -202,7 +202,7 @@
                                     android:layout_weight="1"
                                     android:paddingLeft="15dp"
                                     android:paddingRight="15dp"
-                                    android:text="@string/dummy_name"
+                                    android:text="@string/dummy_email_string"
                                     android:textColor="@color/colorPrimary" />
 
                             </LinearLayout>

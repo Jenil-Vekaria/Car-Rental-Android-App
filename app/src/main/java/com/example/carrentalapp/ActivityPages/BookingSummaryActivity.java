@@ -48,7 +48,7 @@ public class BookingSummaryActivity extends AppCompatActivity {
     private TextView name, email, phoneNumber;
 
     //BOOKING SUMMARY
-    private TextView vehicleName, rate, totalDays, _pickup, _return, insurance, insuranceRate, totalCost;
+    private TextView vehicleName, rate, totalDays, _pickup, _return, insurance, insuranceRate, totalCost, pickupLocation;
 
     //VEHICLE IMAGE
     private ImageView vehicleImage;
@@ -103,6 +103,7 @@ public class BookingSummaryActivity extends AppCompatActivity {
         totalDays = findViewById(R.id.totalDays);
         _pickup = findViewById(R.id.pickup);
         _return = findViewById(R.id.dropoff);
+        pickupLocation = findViewById(R.id.pickupLocation);
 
         //INSURANCE TYPE
         insurance = findViewById(R.id.insurance);
@@ -227,6 +228,7 @@ public class BookingSummaryActivity extends AppCompatActivity {
         totalDays.setText(getDayDifference(booking.getPickupDate(),booking.getReturnDate())+" Days");
         _pickup.setText(booking.getPickupTime());
         _return.setText(booking.getReturnTime());
+        pickupLocation.setText(booking.getBookingLocation());
 
         insurance.setText(chosenInsurance.getCoverageType());
         insuranceRate.setText("$"+chosenInsurance.getCost());

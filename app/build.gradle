@@ -1,4 +1,7 @@
-apply plugin: 'com.android.application'
+plugins {
+    id 'com.google.android.libraries.mapsplatform.secrets-gradle-plugin'
+    id 'com.android.application'
+}
 
 android {
     compileSdkVersion 30
@@ -9,7 +12,6 @@ android {
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
-
     }
     buildTypes {
         release {
@@ -25,9 +27,13 @@ dependencies {
     implementation 'com.android.support:design:30.0.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation 'org.jetbrains:annotations:15.0'
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+    implementation 'com.google.android.gms:play-services-maps:17.0.1'
+    implementation 'com.google.android.libraries.places:places:2.4.0'
+
 
     def room_version = "2.2.3"
 
@@ -43,4 +49,8 @@ dependencies {
     implementation 'com.github.ybq:Android-SpinKit:1.4.0'
 
     debugImplementation 'com.amitshekhar.android:debug-db-encrypt:1.0.6'
+}
+
+secrets {
+    defaultPropertiesFileName 'local.properties'
 }

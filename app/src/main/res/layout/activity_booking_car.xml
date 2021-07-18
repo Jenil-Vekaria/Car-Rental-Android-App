@@ -179,6 +179,7 @@
                                     android:text="11:00PM"
                                     android:textColor="@color/colorPrimary" />
                             </LinearLayout>
+
                         </LinearLayout>
 
                         <View
@@ -289,20 +290,83 @@
                 </androidx.cardview.widget.CardView>
 
                 <androidx.cardview.widget.CardView
+                    android:id="@+id/pickup_location"
+                    android:layout_width="363dp"
+                    android:layout_height="363dp"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginTop="24dp"
+                    android:layout_marginEnd="24dp"
+                    app:cardBackgroundColor="@color/colorPrimary"
+                    app:layout_constraintBottom_toTopOf="@+id/personalInfoText"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/rental_time"
+                    app:layout_constraintVertical_bias="0.094">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/vehicle_info_card"
+                        android:paddingBottom="10dp">
+
+                        <TextView
+                            android:id="@+id/pickup_location_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="24dp"
+                            android:layout_marginTop="4dp"
+                            android:fontFamily="@font/roboto_medium"
+                            android:text="Pickup Location"
+                            android:textColor="@color/colorPrimary"
+                            android:textSize="18sp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <EditText
+                            android:id="@+id/location_text"
+                            android:layout_width="match_parent"
+                            android:layout_height="35dp"
+                            android:ems="10"
+                            android:inputType="textPersonName"
+                            android:textColor="@color/colorPrimary"
+                            android:textSize="14sp"
+                            app:layout_constraintEnd_toEndOf="@+id/pickup_location_text"
+                            app:layout_constraintStart_toStartOf="@+id/pickup_location_text"
+                            app:layout_constraintTop_toBottomOf="@+id/pickup_location_text" />
+
+                        <fragment
+                            android:id="@+id/map"
+                            android:name="com.google.android.gms.maps.SupportMapFragment"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginTop="60dp"
+                            app:layout_constraintEnd_toEndOf="@+id/location_text"
+                            app:layout_constraintHorizontal_bias="0.0"
+                            app:layout_constraintStart_toStartOf="@+id/location_text"
+                            app:layout_constraintTop_toTopOf="@+id/location_text"
+                            tools:context="com.example.currentplacedetailsonmap.BookingCarActivity"
+                            tools:layout="@layout/places_autocomplete_fragment" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
                     android:id="@+id/personalInfoText"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="24dp"
-                    android:layout_marginTop="16dp"
+                    android:layout_marginTop="24dp"
                     android:layout_marginEnd="24dp"
                     app:cardBackgroundColor="@color/colorPrimary"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/rental_time">
+                    app:layout_constraintTop_toBottomOf="@+id/pickup_location">
 
                     <androidx.constraintlayout.widget.ConstraintLayout
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        android:layout_height="357dp"
                         android:background="@drawable/vehicle_info_card"
                         android:paddingBottom="10dp">
 
@@ -478,7 +542,6 @@
                                 android:textColor="@color/colorPrimary"
                                 android:textSize="14sp" />
                         </LinearLayout>
-
 
                     </androidx.constraintlayout.widget.ConstraintLayout>
 

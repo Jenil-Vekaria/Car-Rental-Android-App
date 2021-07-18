@@ -13,12 +13,12 @@ import java.util.Calendar;
 @Entity(primaryKeys = {"bookingID","customerID"})
 public class Booking implements Serializable {
 
-
     private int bookingID;
 
     private Calendar pickupDate;
     private Calendar returnDate;
 
+    private String bookingLocation;
     private String bookingStatus;
 
     @ForeignKey(entity = Customer.class,
@@ -52,7 +52,8 @@ public class Booking implements Serializable {
             onDelete = ForeignKey.CASCADE)
     private String insuranceID;
 
-    public Booking(int bookingID, Calendar pickupDate, Calendar returnDate, String bookingStatus, int customerID, int administratorID, int billingID, int vehicleID, String insuranceID) {
+    public Booking(int bookingID, Calendar pickupDate, Calendar returnDate, String bookingStatus,
+                   int customerID, int administratorID, int billingID, int vehicleID, String insuranceID) {
         this.bookingID = bookingID;
         this.pickupDate = pickupDate;
         this.returnDate = returnDate;
@@ -64,12 +65,28 @@ public class Booking implements Serializable {
         this.insuranceID = insuranceID;
     }
 
+    public Booking(int bookingID, Calendar pickupDate, Calendar returnDate, String bookingStatus,
+                   int customerID, int administratorID, int billingID, int vehicleID,
+                   String insuranceID, String location) {
+        this.bookingID = bookingID;
+        this.pickupDate = pickupDate;
+        this.returnDate = returnDate;
+        this.bookingStatus = bookingStatus;
+        this.customerID = customerID;
+        this.administratorID = administratorID;
+        this.billingID = billingID;
+        this.vehicleID = vehicleID;
+        this.insuranceID = insuranceID;
+        this.bookingLocation = location;
+    }
+
     public String toString(){
         SimpleDateFormat format = new SimpleDateFormat("MMMM, d yyyy hh:mm a");
         return  "\n" +
                 "BookingID:         " + bookingID + "\n" +
                 "Pickup Date:       " + format.format(pickupDate.getTime()) + "\n" +
                 "Return Date:       " + format.format(returnDate.getTime()) + "\n" +
+                "Pickup Location:   " + bookingLocation + "\n" +
                 "Status:            " + bookingStatus + "\n" +
                 "CustomerID:        " + customerID + "\n" +
                 "AdministratorID:   " + administratorID + "\n" +
@@ -156,5 +173,13 @@ public class Booking implements Serializable {
     public String getReturnTime(){
         SimpleDateFormat format = new SimpleDateFormat("hh:mm a MMMM, d yyyy");
         return format.format(returnDate.getTime());
+    }
+
+    public String getBookingLocation() {
+        return bookingLocation;
+    }
+
+    public void setBookingLocation(String bookingLocation) {
+        this.bookingLocation = bookingLocation;
     }
 }
